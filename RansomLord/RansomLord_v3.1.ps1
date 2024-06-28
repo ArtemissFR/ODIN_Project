@@ -20,7 +20,3 @@ Set-Location "C:\ODIN\RansomLord"
 
 # Exécuter le fichier avec les paramètres dans la même fenêtre PowerShell
 Start-Process -FilePath ".\RansomLord_v3.1.exe" -ArgumentList "-g *" -NoNewWindow -Wait
-
-# Maintenir la fenêtre PowerShell ouverte pour vérifier les messages d'erreur ou d'information
-Write-Host "Appuyez sur Entrée pour fermer cette fenêtre..."
-Read-Host
