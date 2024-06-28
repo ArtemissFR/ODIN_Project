@@ -3,7 +3,7 @@
 # ODIN PROJECT
 
 <p align="center">
-  <img src="Documentation/DEIMOS.png" alt="Deimos Icon" width="700"/>
+  <img src="Documentation/DEIMOS.png" alt="ODIN Icon" width="700"/>
 </p>
 
 ## 
