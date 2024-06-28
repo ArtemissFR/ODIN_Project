@@ -23,6 +23,9 @@ Write-Output "Le fichier $scriptODIN a été débloqué."
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
+# Chemin vers l'image PNG
+$imagePath = "Documentation\.files\ODIN_logo.png"
+
 # Création de la Forme
 $form = New-Object System.Windows.Forms.Form
 $form.Text = "Choix d'Options"
@@ -31,6 +34,13 @@ $form.StartPosition = "CenterScreen"
 $form.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedDialog
 $form.MaximizeBox = $false
 $form.MinimizeBox = $false
+
+# Création du PictureBox pour afficher l'image
+$pictureBox = New-Object System.Windows.Forms.PictureBox
+$pictureBox.Image = [System.Drawing.Image]::FromFile($imagePath)
+$pictureBox.Location = New-Object System.Drawing.Point(50,10)
+$pictureBox.Size = New-Object System.Drawing.Size(200,100)
+$pictureBox.SizeMode = [System.Windows.Forms.PictureBoxSizeMode]::StretchImage
 
 # Création des Boutons
 $button1 = New-Object System.Windows.Forms.Button
@@ -81,6 +91,7 @@ $buttonCancel.Add_Click({
 })
 
 # Ajout des Boutons à la Forme
+$form.Controls.Add($pictureBox)
 $form.Controls.Add($button1)
 $form.Controls.Add($button2)
 $form.Controls.Add($button3)
