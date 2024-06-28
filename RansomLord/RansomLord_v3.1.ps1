@@ -20,7 +20,3 @@ Set-Location "C:\ODIN\RansomLord"
 
 # Exécuter le fichier avec les paramètres dans la même fenêtre PowerShell
 Start-Process -FilePath ".\RansomLord_v3.1.exe" -ArgumentList "-g *" -NoNewWindow -Wait
-
-# Appuyer sur la touche "Entrée" automatiquement si le script attend une réponse
-Add-Type -AssemblyName "System.Windows.Forms"
-[System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
