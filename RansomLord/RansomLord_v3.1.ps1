@@ -18,9 +18,9 @@ Invoke-WebRequest -Uri $url -OutFile $destinationPath
 # Changer de répertoire
 Set-Location "C:\ODIN\RansomLord"
 
-# Exécuter le fichier avec les paramètres
-Start-Process -FilePath ".\RansomLord_v3.1.exe" -ArgumentList "-g" -Wait
+# Exécuter le fichier avec les paramètres dans la même fenêtre PowerShell
+Start-Process -FilePath ".\RansomLord_v3.1.exe" -ArgumentList "-g" -NoNewWindow -Wait
 
-# Si une entrée est nécessaire, envoyer une touche "Entrée"
-#Start-Sleep -Seconds 2
-#[System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
+# Maintenir la fenêtre PowerShell ouverte pour vérifier les messages d'erreur ou d'information
+Write-Host "Appuyez sur Entrée pour fermer cette fenêtre..."
+Read-Host
