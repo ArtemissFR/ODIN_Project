@@ -22,5 +22,5 @@ Set-Location "C:\ODIN\RansomLord"
 Start-Process -FilePath ".\RansomLord_v3.1.exe" -ArgumentList "-g" -Wait
 
 # Si une entrée est nécessaire, envoyer une touche "Entrée"
-Start-Sleep -Seconds 2
-[System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
+#Start-Sleep -Seconds 2
+#[System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
