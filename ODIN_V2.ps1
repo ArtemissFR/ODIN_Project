@@ -4,8 +4,6 @@ Add-Type -AssemblyName System.Drawing
 
 # Chemin vers les fichiers que tu veux débloquer
 $scripts = @(
-    "ODIN_V1.ps1",
-    "ODIN_V2.ps1",
     "Hello-My-Dir\Hello_My_Dir.ps1",
     "Hello-My-Dir\Hello_My_Dir_Config.ps1"
     "RansomLord\RansomLord_v3.1.ps1",
