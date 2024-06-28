@@ -15,7 +15,7 @@ if (-Not (Test-Path -Path "C:\ODIN\PingCastle")) {
 }
 
 # Télécharge le fichier zip depuis GitHub
-$zipUrl = "https://github.com/vletoux/pingcastle/archive/refs/heads/master.zip"
+$zipUrl = "https://github.com/vletoux/pingcastle/releases/download/3.2.0.1/PingCastle_3.2.0.1.zip"
 $zipPath = "C:\ODIN\PingCastle\PingCastle.zip"
 
 Invoke-WebRequest -Uri $zipUrl -OutFile $zipPath
