@@ -1,5 +1,7 @@
 # RansomLord
 
+ReadMe : [Francais](https://github.com/ArtemissFR/ODIN_Project/blob/main/RansomLord/Documentation/README_FR.md) | [English](https://github.com/ArtemissFR/ODIN_Project/blob/main/RansomLord/README.md)
+
 RansomLord est un outil de preuve de concept anti-ransomware qui génère des fichiers PE, utilisé pour exploiter les ransomwares vulnérables avant le chiffrement.
 
 - **Langue** : C
