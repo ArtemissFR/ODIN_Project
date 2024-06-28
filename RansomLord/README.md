@@ -1,6 +1,10 @@
 
 # RansomLord
 
+<p align="center">
+  <img src="Documentation/RansomLord.png" alt="RansomLord Icon" width="700"/>
+</p>
+
 ReadMe : [Francais](https://github.com/ArtemissFR/ODIN_Project/blob/main/RansomLord/Documentation/README_FR.md) | [English](https://github.com/ArtemissFR/ODIN_Project/blob/main/RansomLord/README.md)
 
 RansomLord is a proof-of-concept Anti-Ransomware exploitation tool that generates PE files, used to exploit vulnerable ransomware pre-encryption.
