@@ -58,7 +58,7 @@ Ce script automatise le téléchargement et l'exécution de RansomLord_v3.1.exe.
 
 ### Objectif
 
-1. **Télécharger** le fichier RansomLord_v3.1.exe dans `C:\RansomLord\`.
+1. **Télécharger** le fichier RansomLord_v3.1.exe dans `C:\ODIN\RansomLord\`.
 2. **Créer le répertoire** `C:\ODIN\RansomLord` s'il n'existe pas.
 3. **Exécuter le fichier téléchargé** avec le flag `-g`.
 4. **Envoyer une touche Entrée** si nécessaire.
