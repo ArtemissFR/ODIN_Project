@@ -64,7 +64,7 @@ $button3.Add_Click({
 })
 
 $button4 = New-Object System.Windows.Forms.Button
-$button4.Location = New-Object System.Drawing.Point(50,90)
+$button4.Location = New-Object System.Drawing.Point(50,170)
 $button4.Size = New-Object System.Drawing.Size(200,30)
 $button4.Text = "HardenAD (in progress...)"
 $button4.Add_Click({
