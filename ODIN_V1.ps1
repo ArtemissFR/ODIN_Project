@@ -16,12 +16,6 @@ Unblock-File -Path $scriptPingCastle
 Unblock-File -Path $scriptRansomLord
 Unblock-File -Path $scriptODIN
 
-# Chemin vers ton image PNG
-$imagePath = "Documentation/.files/ODIN_logo.png"
-
-# Chargement de l'image depuis le fichier
-$image = [System.Drawing.Image]::FromFile($imagePath)
-
 # Création de la Forme
 $form = New-Object System.Windows.Forms.Form
 $form.Text = "Choix d'Options"
@@ -30,12 +24,6 @@ $form.StartPosition = "CenterScreen"
 $form.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedDialog
 $form.MaximizeBox = $false
 $form.MinimizeBox = $false
-
-# Création d'un PictureBox pour afficher l'image
-$pictureBox = New-Object System.Windows.Forms.PictureBox
-$pictureBox.Image = $image
-$pictureBox.SizeMode = [System.Windows.Forms.PictureBoxSizeMode]::AutoSize
-$pictureBox.Location = New-Object System.Drawing.Point(50, 10)  # Ajuste la position en fonction de tes besoins
 
 # Création des Boutons
 $button1 = New-Object System.Windows.Forms.Button
@@ -86,16 +74,11 @@ $buttonCancel.Add_Click({
 })
 
 # Ajout des contrôles à la Forme
-$form.Controls.Add($pictureBox)
 $form.Controls.Add($button1)
 $form.Controls.Add($button2)
 $form.Controls.Add($button3)
 $form.Controls.Add($button4)
 $form.Controls.Add($buttonCancel)
-
-# Calcul de la taille totale de la forme
-$formSizeHeight = 250 + $pictureBox.Height  # Ajuste la hauteur totale en fonction de la position des boutons et de l'image
-$form.Size = New-Object System.Drawing.Size(300, $formSizeHeight)
 
 # Affichage de la Forme
 $form.ShowDialog()
