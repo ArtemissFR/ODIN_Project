@@ -2,16 +2,19 @@
 $scriptHelloMyDir = "Hello-My-Dir\Hello_My_Dir.ps1"
 $scriptPingCastle = "PingCastle\PingCastle.ps1"
 $scriptRansomLord = "RansomLord\RansomLord_v3.1.ps1"
+$scriptODIN = "ODIN_V1.ps1"
 
 # Utilisation de la cmdlet Unblock-File
 Unblock-File -Path $scriptHelloMyDir
 Unblock-File -Path $scriptPingCastle
 Unblock-File -Path $scriptRansomLord
+Unblock-File -Path $scriptODIN
 
 # Optionnel : Afficher un message pour confirmer que le fichier est débloqué
 Write-Output "Le fichier $scriptHelloMyDir a été débloqué."
 Write-Output "Le fichier $scriptPingCastle a été débloqué."
 Write-Output "Le fichier $scriptRansomLord a été débloqué."
+Write-Output "Le fichier $scriptODIN a été débloqué."
 
 # Chargement des Assemblies nécessaires pour créer l'interface graphique
 Add-Type -AssemblyName System.Windows.Forms
