@@ -35,7 +35,6 @@ $button1.Location = New-Object System.Drawing.Point(50,50)
 $button1.Size = New-Object System.Drawing.Size(200,30)
 $button1.Text = "PingCastle"
 $button1.Add_Click({
-    # Remplacer 'PingCastle\PingCastle.ps1' par le chemin du premier script à exécuter
     Start-Process powershell -ArgumentList "-File PingCastle\PingCastle.ps1"
     $form.Close()
 })
@@ -45,7 +44,6 @@ $button2.Location = New-Object System.Drawing.Point(50,90)
 $button2.Size = New-Object System.Drawing.Size(200,30)
 $button2.Text = "RansomLord"
 $button2.Add_Click({
-    # Remplacer 'RansomLord\RansomLord_v3.1.ps1' par le chemin du second script à exécuter
     Start-Process powershell -ArgumentList "-File RansomLord\RansomLord_v3.1.ps1"
     $form.Close()
 })
@@ -55,11 +53,19 @@ $button3.Location = New-Object System.Drawing.Point(50,130)
 $button3.Size = New-Object System.Drawing.Size(200,30)
 $button3.Text = "Hello-My-Dir"
 $button3.Add_Click({
-    # Remplacer 'Hello-My-Dir\Hello_My_Dir.ps1' par le chemin du troisième script à exécuter
     Start-Process powershell -ArgumentList "-File Hello-My-Dir\Hello_My_Dir.ps1"
     # Attendre que le premier script se termine avant d'exécuter le second script
     Start-Sleep -Seconds 30 # Ajuste le temps d'attente si nécessaire
     Start-Process powershell -ArgumentList "-File Hello-My-Dir\Hello_My_Dir_Config.ps1"
+    $form.Close()
+})
+
+$button4 = New-Object System.Windows.Forms.Button
+$button4.Location = New-Object System.Drawing.Point(50,90)
+$button4.Size = New-Object System.Drawing.Size(200,30)
+$button4.Text = "HardenAD (in progress...)"
+$button4.Add_Click({
+    Start-Process powershell -ArgumentList "-File Harden-AD\HardenAD.ps1"
     $form.Close()
 })
 
@@ -75,6 +81,7 @@ $buttonCancel.Add_Click({
 $form.Controls.Add($button1)
 $form.Controls.Add($button2)
 $form.Controls.Add($button3)
+$form.Controls.Add($button4)
 $form.Controls.Add($buttonCancel)
 
 # Affichage de la Forme
