@@ -49,6 +49,7 @@ Les moteurs de sécurité de mauvaise qualité peuvent incorrectement signaler l
 <p align="center">
   <img src=".files/ransomlord_screen1.png" alt="RansomLord Screen1" width="700"/>
 </p>
+
 ---
 
 ## Script PowerShell
