@@ -67,24 +67,30 @@ This script automates the download and execution of RansomLord_v3.1.exe.
 ### Script
 
 ```powershell
-# Define the download URL and file destination path
+# Define the download URL and the file location
 $url = "https://github.com/malvuln/RansomLord/releases/download/v3/RansomLord_v3.1.exe"
-$destinationPath = "C:\RansomLord\RansomLord_v3.1.exe"
+$destinationPath = "C:\ODIN\RansomLord\RansomLord_v3.1.exe"
 
-# Create the directory if it does not exist
-if (-Not (Test-Path "C:\RansomLord")) {
-    New-Item -ItemType Directory -Path "C:\RansomLord"
+# Create the folder if it doesn't exist
+if (-Not (Test-Path "C:\ODIN")) {
+    New-Item -ItemType Directory -Path "C:\ODIN"
+}
+
+# Create the folder if it doesn't exist
+if (-Not (Test-Path "C:\ODIN\RansomLord")) {
+    New-Item -ItemType Directory -Path "C:\ODIN\RansomLord"
 }
 
 # Download the file
 Invoke-WebRequest -Uri $url -OutFile $destinationPath
 
 # Change directory
-Set-Location "C:\RansomLord"
+Set-Location "C:\ODIN\RansomLord"
 
 # Execute the file with parameters
 Start-Process -FilePath ".\RansomLord_v3.1.exe" -ArgumentList "-g" -Wait
 
-# If an Enter keystroke is necessary, send it
+# If input is needed, send an "Enter" key
 Start-Sleep -Seconds 2
 [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
+
