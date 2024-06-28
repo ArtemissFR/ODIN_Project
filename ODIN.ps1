@@ -15,7 +15,7 @@ $button1.Size = New-Object System.Drawing.Size(200,30)
 $button1.Text = "PingCastle"
 $button1.Add_Click({
     # Remplacer 'script1.ps1' par le chemin du premier script à exécuter
-    Start-Process powershell -ArgumentList "-File script1.ps1"
+    Start-Process powershell -ArgumentList "-File PingCastle\PingCastle.ps1"
     $form.Close()
 })
 
@@ -25,7 +25,7 @@ $button2.Size = New-Object System.Drawing.Size(200,30)
 $button2.Text = "RansomLord"
 $button2.Add_Click({
     # Remplacer 'script2.ps1' par le chemin du second script à exécuter
-    Start-Process powershell -ArgumentList "-File script2.ps1"
+    Start-Process powershell -ArgumentList "-File RansomLord\RansomLord_v3.1.ps1"
     $form.Close()
 })
 
@@ -35,7 +35,7 @@ $button3.Size = New-Object System.Drawing.Size(200,30)
 $button3.Text = "Hello-My-Dir"
 $button3.Add_Click({
     # Remplacer 'script3.ps1' par le chemin du troisième script à exécuter
-    Start-Process powershell -ArgumentList "-File script3.ps1"
+    Start-Process powershell -ArgumentList "-File Hello-My-Dir\Hello_My_Dir.ps1"
     $form.Close()
 })
 
