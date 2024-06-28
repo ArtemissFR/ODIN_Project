@@ -39,7 +39,7 @@ Lamer security engines may incorrectly flag RansomLord DLLs as malicious. They a
 - [Vulnerabilities Allow Hijacking Most Ransomware to Prevent File Encryption](https://web.archive.org/web/20220504180432/https://www.securityweek.com/vulnerabilities-allow-hijacking-most-ransomware-prevent-file-encryption/)
 
 ## Official github source
-[RansomLord v3.1 by malvuln](https://github.com/malvuln/RansomLord/releases/tag/v3)
+- [RansomLord v3.1 by malvuln](https://github.com/malvuln/RansomLord/releases/tag/v3)
 ---
 
 ## PowerShell Script
