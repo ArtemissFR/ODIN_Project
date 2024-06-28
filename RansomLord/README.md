@@ -1,4 +1,3 @@
----
 
 # RansomLord
 
@@ -6,8 +5,6 @@ RansomLord is a proof-of-concept Anti-Ransomware exploitation tool that generate
 
 - **Lang**: C
 - **SHA256**: 647494bda466e645768d6f7d1cd051097aee319f88018d1a80547d8d538c98db
-  
----
 
 ## Features
 
