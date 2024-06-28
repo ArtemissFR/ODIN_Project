@@ -17,7 +17,7 @@ Unblock-File -Path $scriptRansomLord
 Unblock-File -Path $scriptODIN
 
 # Chemin vers ton image PNG
-$imagePath = "Documentation\.files\ODIN_logo.png"
+$imagePath = "Documentation/.files/ODIN_logo.png"
 
 # Chargement de l'image depuis le fichier
 $image = [System.Drawing.Image]::FromFile($imagePath)
