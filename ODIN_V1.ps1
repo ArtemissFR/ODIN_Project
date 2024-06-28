@@ -26,7 +26,7 @@ Add-Type -AssemblyName System.Drawing
 # Création de la Forme
 $form = New-Object System.Windows.Forms.Form
 $form.Text = "Choix d'Options"
-$form.Size = New-Object System.Drawing.Size(300,250)
+$form.Size = New-Object System.Drawing.Size(300,300)
 $form.StartPosition = "CenterScreen"
 $form.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedDialog
 $form.MaximizeBox = $false
