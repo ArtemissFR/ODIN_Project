@@ -57,6 +57,9 @@ $button3.Text = "Hello-My-Dir"
 $button3.Add_Click({
     # Remplacer 'Hello-My-Dir\Hello_My_Dir.ps1' par le chemin du troisième script à exécuter
     Start-Process powershell -ArgumentList "-File Hello-My-Dir\Hello_My_Dir.ps1"
+    # Attendre que le premier script se termine avant d'exécuter le second script
+    Start-Sleep -Seconds 30 # Ajuste le temps d'attente si nécessaire
+    Start-Process powershell -ArgumentList "-File Hello-My-Dir\Hello_My_Dir_Config.ps1"
     $form.Close()
 })
 
