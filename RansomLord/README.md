@@ -46,6 +46,11 @@ Lamer security engines may incorrectly flag RansomLord DLLs as malicious. They a
 
 ## Official github source
 - [RansomLord v3.1 by malvuln](https://github.com/malvuln/RansomLord/releases/tag/v3)
+
+<p align="center">
+  <img src="Documentation/.files/ransomlord_screen1.png" alt="RansomLord Screen1" width="700"/>
+</p>
+
 ---
 
 ## PowerShell Script
