@@ -6,6 +6,7 @@ Add-Type -AssemblyName System.Drawing
 $scriptHelloMyDir = "Hello-My-Dir\Hello_My_Dir.ps1"
 $scriptHelloMyDirConfig = "Hello-My-Dir\Hello_My_Dir_Config.ps1"
 $scriptPingCastle = "PingCastle\PingCastle.ps1"
+$scriptPurpleKnight = "PurpleKnight\PurpleKnight.ps1"
 $scriptRansomLord = "RansomLord\RansomLord_v3.1.ps1"
 $scriptODIN = "ODIN_V1.ps1"
 
@@ -13,6 +14,7 @@ $scriptODIN = "ODIN_V1.ps1"
 Unblock-File -Path $scriptHelloMyDir
 Unblock-File -Path $scriptHelloMyDirConfig
 Unblock-File -Path $scriptPingCastle
+Unblock-File -Path $scriptPurpleKnight
 Unblock-File -Path $scriptRansomLord
 Unblock-File -Path $scriptODIN
 
@@ -74,10 +76,11 @@ $buttonCancel.Add_Click({
 })
 
 # Ajout des contrôles à la Forme
-$form.Controls.Add($button1)
-$form.Controls.Add($button2)
-$form.Controls.Add($button3)
-$form.Controls.Add($button4)
+$form.Controls.Add($button1) # Hello-My-Dir
+$form.Controls.Add($button2) # Harden-AD
+$form.Controls.Add($button3) # RansomLord
+$form.Controls.Add($button4) # PingCastle
+$form.Controls.Add($button5) # PurpleKnight
 $form.Controls.Add($buttonCancel)
 
 # Affichage de la Forme
