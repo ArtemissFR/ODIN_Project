@@ -1,9 +1,12 @@
+---
 # RansomLord
 
 RansomLord is a proof-of-concept Anti-Ransomware exploitation tool that generates PE files, used to exploit vulnerable ransomware pre-encryption.
 
 - **Lang**: C
 - **SHA256**: 647494bda466e645768d6f7d1cd051097aee319f88018d1a80547d8d538c98db
+  
+---
 
 ## Features
 
@@ -37,6 +40,8 @@ Lamer security engines may incorrectly flag RansomLord DLLs as malicious. They a
 - [Conti, REvil, LockBit Ransomware Bugs Exploited to Block Encryption](https://web.archive.org/web/20220601204439/https://www.bleepingcomputer.com/news/security/conti-revil-lockbit-ransomware-bugs-exploited-to-block-encryption/)
 - [Vulnerabilities Allow Hijacking Most Ransomware to Prevent File Encryption](https://web.archive.org/web/20220504180432/https://www.securityweek.com/vulnerabilities-allow-hijacking-most-ransomware-prevent-file-encryption/)
 
+## Official github source
+[RansomLord v3.1 by malvuln](https://github.com/malvuln/RansomLord/releases/tag/v3)
 ---
 
 ## PowerShell Script
