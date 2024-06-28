@@ -36,7 +36,7 @@ $buttonLaunch.Add_Click({
     foreach ($script in $scripts) {
         Start-Process powershell -ArgumentList "-File $script"
         # Attendre que le script actuel se termine avant de continuer
-        Start-Sleep -Seconds 5 # Temps d'attente ajustable
+        Start-Sleep -Seconds 300 # Temps d'attente ajustable
     }
     $form.Close()
 })
