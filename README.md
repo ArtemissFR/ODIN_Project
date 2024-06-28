@@ -14,13 +14,13 @@ ReadMe : [Francais](https://github.com/ArtemissFR/ODIN_Project/blob/main/Documen
 
 
 
-### Comment utiliser le Playbook ?
+### Comment utiliser ce Projet ?
 
 1. Télécharger le dépots :
    
    ```bash
    git clone https://github.com/ArtemissFR/ODIN_Project
-   cd DEIMOS_Project
+   cd ODIN_Project
    ```
 
 ---
