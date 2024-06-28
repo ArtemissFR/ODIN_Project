@@ -1,7 +1,7 @@
 # PING CASTLE
 - Status = *ok*
 # RANSOMLORD
-- Status = *in progress ...*
+- Status = *ok*
 # HELLO-MY-DIR
 - Status = *in progress ...*
 # HARDEN-AD
