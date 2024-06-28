@@ -60,7 +60,7 @@ This script automates the download and execution of RansomLord_v3.1.exe.
 ### Purpose
 
 1. **Download** the RansomLord_v3.1.exe file to `C:\RansomLord\`.
-2. **Create the directory** `C:\RansomLord` if it does not exist.
+2. **Create the directory** `C:\ODIN\RansomLord` if it does not exist.
 3. **Execute the downloaded file** with the `-g` flag.
 4. **Send an Enter keystroke** if necessary.
 
