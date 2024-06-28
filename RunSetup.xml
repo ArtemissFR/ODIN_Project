@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='style.xsl'?>
+<Configuration>
+  <Forest>
+    <Installation>Yes</Installation>
+    <FullName>odin.domain.local</FullName>
+    <NetBIOS>ODINAD</NetBIOS>
+    <FunctionalLevel>7</FunctionalLevel>
+    <RecycleBin>Yes</RecycleBin>
+    <PAM>Yes</PAM>
+  </Forest>
+  <Domain>
+    <Type>Root</Type>
+    <FullName>odin.domain.local</FullName>
+    <NetBIOS>ODINAD</NetBIOS>
+    <FunctionalLevel>7</FunctionalLevel>
+    <SysvolPath>C:\Windows\SYSVOL</SysvolPath>
+    <NtdsPath>C:\Windows\NTDS</NtdsPath>
+  </Domain>
+  <WindowsFeatures>
+    <AD-Domain-Services>No</AD-Domain-Services>
+    <RSAT-AD-Tools>No</RSAT-AD-Tools>
+    <RSAT-DNS-Server>No</RSAT-DNS-Server>
+    <RSAT-DFS-Mgmt-Con>No</RSAT-DFS-Mgmt-Con>
+    <GPMC>No</GPMC>
+  </WindowsFeatures>
+</Configuration>
