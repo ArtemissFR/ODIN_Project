@@ -3,7 +3,7 @@
 # ODIN PROJECT
 
 <p align="center">
-  <img src="Documentation/.files/ODIN_logo.png" alt="ODIN Icon" width="450"/>
+  <img src="Documentation/.files/ODIN_icon.png" alt="ODIN Icon" width="450"/>
 </p>
 
 ## 
