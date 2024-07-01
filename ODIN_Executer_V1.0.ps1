@@ -8,6 +8,7 @@ $scriptADACLScanner = "AD ACL Scanner\ADACLScan.ps1"
 
 # Utilisation de la cmdlet Unblock-File
 Unblock-File -Path $scriptHardenADStart
+Unblock-File -Path $scriptADACLScanner
 
 # Création de la Forme
 $form = New-Object System.Windows.Forms.Form
