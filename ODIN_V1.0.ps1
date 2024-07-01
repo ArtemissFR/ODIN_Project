@@ -39,7 +39,6 @@ $button1.Add_Click({
     # Attendre que le premier script se termine avant d'exécuter le second script
     Start-Sleep -Seconds 30 # Ajuste le temps d'attente si nécessaire
     Start-Process powershell -ArgumentList "-File Hello-My-Dir\Hello_My_Dir_Config.ps1"
-    $form.Close()
 })
 
 $button2 = New-Object System.Windows.Forms.Button
@@ -48,7 +47,6 @@ $button2.Size = New-Object System.Drawing.Size(200,30)
 $button2.Text = "Harden-AD (in progress ...)"
 $button2.Add_Click({
     Start-Process powershell -ArgumentList "-File Harden-AD\Harden-AD.ps1"
-    $form.Close()
 })
 
 $button3 = New-Object System.Windows.Forms.Button
@@ -57,7 +55,6 @@ $button3.Size = New-Object System.Drawing.Size(200,30)
 $button3.Text = "RansomLord"
 $button3.Add_Click({
     Start-Process powershell -ArgumentList "-File RansomLord\RansomLord_v3.1.ps1"
-    $form.Close()
 })
 
 $button4 = New-Object System.Windows.Forms.Button
@@ -66,7 +63,6 @@ $button4.Size = New-Object System.Drawing.Size(200,30)
 $button4.Text = "PingCastle"
 $button4.Add_Click({
     Start-Process powershell -ArgumentList "-File PingCastle\PingCastle.ps1"
-    $form.Close()
 })
 
 $button5 = New-Object System.Windows.Forms.Button
@@ -75,7 +71,6 @@ $button5.Size = New-Object System.Drawing.Size(200,30)
 $button5.Text = "PurpleKnight"
 $button5.Add_Click({
     Start-Process powershell -ArgumentList "-File PurpleKnight\PurpleKnight.ps1"
-    $form.Close()
 })
 
 $buttonCancel = New-Object System.Windows.Forms.Button
