@@ -10,7 +10,7 @@ Unblock-File -Path $scriptHardenADStart
 
 # Création de la Forme
 $form = New-Object System.Windows.Forms.Form
-$form.Text = "[ODIN] - Start"
+$form.Text = "[ODIN] - APPLICATION LAUNCHER"
 $form.Size = New-Object System.Drawing.Size(300,400)
 $form.StartPosition = "CenterScreen"
 $form.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedDialog
