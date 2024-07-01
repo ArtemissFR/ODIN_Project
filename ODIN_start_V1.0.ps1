@@ -34,7 +34,7 @@ $button1.Add_Click({
 $button2 = New-Object System.Windows.Forms.Button
 $button2.Location = New-Object System.Drawing.Point(50,90)
 $button2.Size = New-Object System.Drawing.Size(200,30)
-$button2.Text = "Harden-AD (in progress ...)"
+$button2.Text = "Harden-AD"
 $button2.Add_Click({
     Start-Process powershell -ArgumentList "-File Harden-AD\Harden-AD_start.ps1"
 })
@@ -53,7 +53,7 @@ $button4.Location = New-Object System.Drawing.Point(50,170)
 $button4.Size = New-Object System.Drawing.Size(200,30)
 $button4.Text = "PurpleKnight"
 $button4.Add_Click({
-    $purpleknight_path = "C:\ODIN\PurpleKnight"
+    $purpleknight_path = "C:\ODIN\PurpleKnight\PK Community 4.2"
     Start-Process powershell -ArgumentList "-NoProfile -NoExit -Command `"Set-Location -Path $purpleknight_path; .\PurpleKnight.exe`""
 })
 
