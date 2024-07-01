@@ -33,7 +33,7 @@ $form.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedDialog
 $form.MaximizeBox = $false
 $form.MinimizeBox = $false
 
-# Création des Boutons
+# BUTTON 1 --> HELLO-MY-DIR
 $button1 = New-Object System.Windows.Forms.Button
 $button1.Location = New-Object System.Drawing.Point(50,50)
 $button1.Size = New-Object System.Drawing.Size(200,30)
@@ -44,7 +44,9 @@ $button1.Add_Click({
     Start-Sleep -Seconds 30 # Ajuste le temps d'attente si nécessaire
     Start-Process powershell -ArgumentList "-File Hello-My-Dir\Hello_My_Dir_Config.ps1"
 })
+# BUTTON 1 --> HELLO-MY-DIR
 
+# BUTTON 2 --> HARDEN-AD
 $button2 = New-Object System.Windows.Forms.Button
 $button2.Location = New-Object System.Drawing.Point(50,90)
 $button2.Size = New-Object System.Drawing.Size(200,30)
@@ -52,7 +54,9 @@ $button2.Text = "Harden-AD (in progress ...)"
 $button2.Add_Click({
     Start-Process powershell -ArgumentList "-File Harden-AD\Harden-AD.ps1"
 })
+# BUTTON 2 --> HARDEN-AD
 
+# BUTTON 3 --> RANSOMLORD
 $button3 = New-Object System.Windows.Forms.Button
 $button3.Location = New-Object System.Drawing.Point(50,130)
 $button3.Size = New-Object System.Drawing.Size(200,30)
@@ -60,7 +64,9 @@ $button3.Text = "RansomLord"
 $button3.Add_Click({
     Start-Process powershell -ArgumentList "-File RansomLord\RansomLord_v3.1.ps1"
 })
+# BUTTON 3 --> RANSOMLORD
 
+# BUTTON 4 --> PINGCASTLE
 $button4 = New-Object System.Windows.Forms.Button
 $button4.Location = New-Object System.Drawing.Point(50,170)
 $button4.Size = New-Object System.Drawing.Size(200,30)
@@ -68,7 +74,9 @@ $button4.Text = "PingCastle"
 $button4.Add_Click({
     Start-Process powershell -ArgumentList "-File PingCastle\PingCastle.ps1"
 })
+# BUTTON 4 --> PINGCASTLE
 
+# BUTTON 5 --> PURPLEKNIGHT
 $button5 = New-Object System.Windows.Forms.Button
 $button5.Location = New-Object System.Drawing.Point(50,210)
 $button5.Size = New-Object System.Drawing.Size(200,30)
@@ -76,7 +84,9 @@ $button5.Text = "PurpleKnight"
 $button5.Add_Click({
     Start-Process powershell -ArgumentList "-File PurpleKnight\PurpleKnight.ps1"
 })
+# BUTTON 5 --> PURPLEKNIGHT
 
+# BUTTON 6 --> AD ACL Scanner
 $button6 = New-Object System.Windows.Forms.Button
 $button6.Location = New-Object System.Drawing.Point(50,250)
 $button6.Size = New-Object System.Drawing.Size(200,30)
@@ -84,7 +94,9 @@ $button6.Text = "AD ACL Scanner"
 $button6.Add_Click({
     Start-Process powershell -ArgumentList "-File ADACLScanner\ADACLScanner.ps1"
 })
+# BUTTON 6 --> AD ACL Scanner
 
+# BUTTON 7 --> NEXT
 $buttonNext = New-Object System.Windows.Forms.Button
 $buttonNext.Location = New-Object System.Drawing.Point(50,290)
 $buttonNext.Size = New-Object System.Drawing.Size(200,30)
@@ -93,6 +105,7 @@ $buttonNext.Add_Click({
     Start-Process powershell -ArgumentList "-File ODIN_Executer_V1.0.ps1"
     $form.Close()
 })
+# BUTTON 7 --> NEXT
 
 # Ajout des contrôles à la Forme
 $form.Controls.Add($button1) # --> Hello-My-Dir
