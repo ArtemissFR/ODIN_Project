@@ -22,7 +22,7 @@ Unblock-File -Path $scriptODIN
 
 # Création de la Forme
 $form = New-Object System.Windows.Forms.Form
-$form.Text = "Choix d'Options"
+$form.Text = "[ODIN] - Choice"
 $form.Size = New-Object System.Drawing.Size(300,500)
 $form.StartPosition = "CenterScreen"
 $form.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedDialog
