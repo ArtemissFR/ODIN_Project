@@ -85,11 +85,12 @@ $button6.Add_Click({
     Start-Process powershell -ArgumentList "-File ADACLScanner\ADACLScanner.ps1"
 })
 
-$buttonCancel = New-Object System.Windows.Forms.Button
-$buttonCancel.Location = New-Object System.Drawing.Point(50,290)
-$buttonCancel.Size = New-Object System.Drawing.Size(200,30)
-$buttonCancel.Text = "Finish"
-$buttonCancel.Add_Click({
+$buttonNext = New-Object System.Windows.Forms.Button
+$buttonNext.Location = New-Object System.Drawing.Point(50,290)
+$buttonNext.Size = New-Object System.Drawing.Size(200,30)
+$buttonNext.Text = "Next ..."
+$buttonNext.Add_Click({
+    Start-Process powershell -ArgumentList "-File ODIN_Executer_V1.0.ps1"
     $form.Close()
 })
 
@@ -100,7 +101,7 @@ $form.Controls.Add($button3) # --> RansomLord
 $form.Controls.Add($button4) # --> PingCastle
 $form.Controls.Add($button5) # --> PurpleKnight
 $form.Controls.Add($button6) # --> AD ACL Scanner
-$form.Controls.Add($buttonCancel) # --> Finish
+$form.Controls.Add($buttonNext) # --> ODIN application launcher
 
 # Affichage de la Forme
 $form.ShowDialog()
