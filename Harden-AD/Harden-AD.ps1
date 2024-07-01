@@ -11,7 +11,7 @@ if (-Not (Test-Path -Path "C:\ODIN\Harden-AD")) {
     New-Item -Path "C:\ODIN\Harden-AD" -ItemType Directory
     Write-Host "Dossier C:\ODIN\Harden-AD créé."
 } else {
-    Write-Host "Dossier C:\ODIN\Hello-My-Dir existe déjà."
+    Write-Host "Dossier C:\ODIN\Harden-AD existe déjà."
 }
 
 # Télécharge le fichier zip depuis GitHub
