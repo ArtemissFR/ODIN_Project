@@ -9,7 +9,7 @@ $scriptHardenAD = "Hello-My-Dir\Harden-AD.ps1"
 $scriptPingCastle = "PingCastle\PingCastle.ps1"
 $scriptPurpleKnight = "PurpleKnight\PurpleKnight.ps1"
 $scriptRansomLord = "RansomLord\RansomLord_v3.1.ps1"
-$scriptODIN = "ODIN_V1.ps1"
+$scriptODIN = "ODIN_V1.0.ps1"
 
 # Utilisation de la cmdlet Unblock-File
 Unblock-File -Path $scriptHelloMyDir
