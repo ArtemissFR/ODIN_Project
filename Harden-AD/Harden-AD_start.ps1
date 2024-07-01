@@ -26,7 +26,7 @@ $button1.Size = New-Object System.Drawing.Size(200,30)
 $button1.Text = "Config Harden-AD"
 $button1.Add_Click({
     $hardenad_path = "C:\ODIN\Harden-AD\HardenAD-Master"
-    Start-Process powershell -ArgumentList "-NoProfile -NoExit -Command `"Set-Location -Path $hardenad_path; .\HardenAD`""
+    Start-Process powershell -ArgumentList "-NoProfile -NoExit -Command `"Set-Location -Path $hardenad_path; .\Run-HardenADGui`""
 })
 
 $button2 = New-Object System.Windows.Forms.Button
@@ -35,7 +35,7 @@ $button2.Size = New-Object System.Drawing.Size(200,30)
 $button2.Text = "Launch Harden-AD"
 $button2.Add_Click({
     $hardenad_path = "C:\ODIN\Harden-AD\HardenAD-Master"
-    Start-Process powershell -ArgumentList "-NoProfile -NoExit -Command `"Set-Location -Path $hardenad_path; .\Run-HardenADGui`""
+    Start-Process powershell -ArgumentList "-NoProfile -NoExit -Command `"Set-Location -Path $hardenad_path; .\HardenAD`""
 })
 
 $buttonCancel = New-Object System.Windows.Forms.Button
