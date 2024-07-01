@@ -61,7 +61,7 @@ $button5.Size = New-Object System.Drawing.Size(200,30)
 $button5.Text = "Execute AD ACL Scanner"
 $button5.Add_Click({
     $adaclscanner_path = "C:\ODIN\AD ACL Scanner\ADACLScanner-master"
-    Start-Process powershell -ArgumentList "-NoProfile -NoExit -Command `"Set-Location -Path $adaclscanner_path; .\ADACLScan`""
+    Start-Process powershell -ArgumentList "-NoProfile -NoExit -Command `"Set-Location -Path $adaclscanner_path; .\ADACLScan.ps1`""
 })
 
 $buttonCancel = New-Object System.Windows.Forms.Button
