@@ -77,8 +77,16 @@ $button5.Add_Click({
     Start-Process powershell -ArgumentList "-File PurpleKnight\PurpleKnight.ps1"
 })
 
+$button6 = New-Object System.Windows.Forms.Button
+$button6.Location = New-Object System.Drawing.Point(50,250)
+$button6.Size = New-Object System.Drawing.Size(200,30)
+$button6.Text = "AD ACL Scanner"
+$button6.Add_Click({
+    Start-Process powershell -ArgumentList "-File ADACLScanner\ADACLScanner.ps1"
+})
+
 $buttonCancel = New-Object System.Windows.Forms.Button
-$buttonCancel.Location = New-Object System.Drawing.Point(50,250)
+$buttonCancel.Location = New-Object System.Drawing.Point(50,290)
 $buttonCancel.Size = New-Object System.Drawing.Size(200,30)
 $buttonCancel.Text = "Finish"
 $buttonCancel.Add_Click({
@@ -91,6 +99,7 @@ $form.Controls.Add($button2) # --> Harden-AD
 $form.Controls.Add($button3) # --> RansomLord
 $form.Controls.Add($button4) # --> PingCastle
 $form.Controls.Add($button5) # --> PurpleKnight
+$form.Controls.Add($button6) # --> AD ACL Scanner
 $form.Controls.Add($buttonCancel) # --> Finish
 
 # Affichage de la Forme
