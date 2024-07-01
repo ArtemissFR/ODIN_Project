@@ -26,7 +26,7 @@ Unblock-File -Path $scriptODINExecuter # --> ODIN Gui application launcher
 
 # Creating the Form
 $form = New-Object System.Windows.Forms.Form
-$form.Text = "[ODIN]"
+$form.Text = "[ODIN] - DOWNLOADER / INSTALLER"
 $form.Size = New-Object System.Drawing.Size(300,500)
 $form.StartPosition = "CenterScreen"
 $form.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedDialog
