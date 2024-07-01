@@ -5,7 +5,7 @@ Add-Type -AssemblyName System.Drawing
 # Chemin vers les fichiers que tu veux débloquer
 $scriptHelloMyDir = "Hello-My-Dir\Hello_My_Dir.ps1"
 $scriptHelloMyDirConfig = "Hello-My-Dir\Hello_My_Dir_Config.ps1"
-$scriptHardenAD = "Hello-My-Dir\Harden-AD.ps1"
+$scriptHardenAD = "Harden-AD\Harden-AD.ps1"
 $scriptPingCastle = "PingCastle\PingCastle.ps1"
 $scriptPurpleKnight = "PurpleKnight\PurpleKnight.ps1"
 $scriptRansomLord = "RansomLord\RansomLord_v3.1.ps1"
