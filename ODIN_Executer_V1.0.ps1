@@ -3,11 +3,9 @@ Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
 # Chemin vers les fichiers que tu veux débloquer
-$scriptHelloMyDir = "Hello-My-Dir\Hello_My_Dir.ps1"
 $scriptHardenADStart = "Harden-AD\Harden-AD_start.ps1"
 
 # Utilisation de la cmdlet Unblock-File
-Unblock-File -Path $scriptHelloMyDir
 Unblock-File -Path $scriptHardenADStart
 
 # Création de la Forme
