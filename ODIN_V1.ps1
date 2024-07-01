@@ -90,7 +90,7 @@ $form.Controls.Add($button2) # Harden-AD
 $form.Controls.Add($button3) # RansomLord
 $form.Controls.Add($button4) # PingCastle
 $form.Controls.Add($button5) # PurpleKnight
-$form.Controls.Add($buttonCancel)
+$form.Controls.Add($buttonCancel) # Terminer
 
 # Affichage de la Forme
 $form.ShowDialog()
