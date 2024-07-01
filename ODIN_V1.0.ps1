@@ -1,28 +1,32 @@
-# Chargement des Assemblies nécessaires
+# Loading the necessary Assemblies
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
-# Chemin vers les fichiers que tu veux débloquer
+# Path to the files you want to unlock
 $scriptHelloMyDir = "Hello-My-Dir\Hello_My_Dir.ps1"
 $scriptHelloMyDirConfig = "Hello-My-Dir\Hello_My_Dir_Config.ps1"
 $scriptHardenAD = "Harden-AD\Harden-AD.ps1"
 $scriptPingCastle = "PingCastle\PingCastle.ps1"
 $scriptPurpleKnight = "PurpleKnight\PurpleKnight.ps1"
 $scriptRansomLord = "RansomLord\RansomLord_v3.1.ps1"
+$scriptADACLScanner = "ADACLScanner\ADACLScanner.ps1"
 $scriptODIN = "ODIN_V1.0.ps1"
+$scriptODINstart = "ODIN_start_V1.0.ps1"
 
-# Utilisation de la cmdlet Unblock-File
-Unblock-File -Path $scriptHelloMyDir
-Unblock-File -Path $scriptHelloMyDirConfig
-Unblock-File -Path $scriptHardenAD
-Unblock-File -Path $scriptPingCastle
-Unblock-File -Path $scriptPurpleKnight
-Unblock-File -Path $scriptRansomLord
-Unblock-File -Path $scriptODIN
+# Use of cmdlet Unblock-File
+Unblock-File -Path $scriptHelloMyDir # Unblock script powershell for : Hello-My-Dir
+Unblock-File -Path $scriptHelloMyDirConfig # Unblock script powershell for : Hello-My-Dir Configuration
+Unblock-File -Path $scriptHardenAD # Unblock script powershell for : HardenAD
+Unblock-File -Path $scriptPingCastle # Unblock script powershell for : PingCastle
+Unblock-File -Path $scriptPurpleKnight # Unblock script powershell for : PurpleKnight
+Unblock-File -Path $scriptRansomLord # Unblock script powershell for : RansomLord
+Unblock-File -Path $scriptADACLScanner # Unblock script powershell for : AD ACL Scanner
+Unblock-File -Path $scriptODIN # Unblock script powershell for : ODIN Installer
+Unblock-File -Path $scriptODINstart # Unblock script powershell for : ODIN Gui application launcher
 
-# Création de la Forme
+# Creating the Form
 $form = New-Object System.Windows.Forms.Form
-$form.Text = "[ODIN] - Choice"
+$form.Text = "[ODIN]"
 $form.Size = New-Object System.Drawing.Size(300,500)
 $form.StartPosition = "CenterScreen"
 $form.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedDialog
