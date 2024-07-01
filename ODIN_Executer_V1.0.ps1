@@ -55,13 +55,13 @@ $button4.Add_Click({
     Start-Process powershell -ArgumentList "-NoProfile -NoExit -Command `"Set-Location -Path $purpleknight_path; .\PurpleKnight.exe`""
 })
 
-$button4 = New-Object System.Windows.Forms.Button
-$button4.Location = New-Object System.Drawing.Point(50,210)
-$button4.Size = New-Object System.Drawing.Size(200,30)
-$button4.Text = "Execute AD ACL Scanner"
-$button4.Add_Click({
-    $adaclscanner_path = "C:\ODIN\AD ACL Scanner\?"
-    Start-Process powershell -ArgumentList "-NoProfile -NoExit -Command `"Set-Location -Path $adaclscanner_path; .\PurpleKnight.exe`""
+$button5 = New-Object System.Windows.Forms.Button
+$button5.Location = New-Object System.Drawing.Point(50,210)
+$button5.Size = New-Object System.Drawing.Size(200,30)
+$button5.Text = "Execute AD ACL Scanner"
+$button5.Add_Click({
+    $adaclscanner_path = "C:\ODIN\AD ACL Scanner\ADACLScanner-master"
+    Start-Process powershell -ArgumentList "-NoProfile -NoExit -Command `"Set-Location -Path $adaclscanner_path; .\ADACLScan`""
 })
 
 $buttonCancel = New-Object System.Windows.Forms.Button
