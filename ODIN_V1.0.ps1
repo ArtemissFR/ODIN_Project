@@ -11,7 +11,7 @@ $scriptPurpleKnight = "PurpleKnight\PurpleKnight.ps1" # --> PurpleKnight
 $scriptRansomLord = "RansomLord\RansomLord_v3.1.ps1" # --> RansomLord
 $scriptADACLScanner = "ADACLScanner\ADACLScanner.ps1" # --> AD ACL Scanner
 $scriptODIN = "ODIN_V1.0.ps1" # --> ODIN Installer
-$scriptODINstart = "ODIN_Executer_V1.0.ps1" # --> ODIN Gui application launcher
+$scriptODINExecuter = "ODIN_Executer_V1.0.ps1" # --> ODIN Gui application launcher
 
 # Use of cmdlet Unblock-File --> Unblock script powershell
 Unblock-File -Path $scriptHelloMyDir # --> Hello-My-Dir
@@ -22,7 +22,7 @@ Unblock-File -Path $scriptPurpleKnight # --> PurpleKnight
 Unblock-File -Path $scriptRansomLord # --> RansomLord
 Unblock-File -Path $scriptADACLScanner # --> AD ACL Scanner
 Unblock-File -Path $scriptODIN # --> ODIN Installer
-Unblock-File -Path $scriptODINstart # --> ODIN Gui application launcher
+Unblock-File -Path $scriptODINExecuter # --> ODIN Gui application launcher
 
 # Creating the Form
 $form = New-Object System.Windows.Forms.Form
