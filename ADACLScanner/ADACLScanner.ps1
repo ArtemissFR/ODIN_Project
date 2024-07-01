@@ -15,7 +15,7 @@ if (-Not (Test-Path -Path "C:\ODIN\AD ACL Scanner")) {
 }
 
 # Télécharge le fichier zip depuis GitHub
-$zipUrl = "https://github.com/LoicVeirman/HardenAD/archive/refs/heads/Master.zip"
+$zipUrl = "https://github.com/canix1/ADACLScanner/archive/refs/heads/master.zip"
 $zipPath = "C:\ODIN\AD ACL Scanner\AD-ACL-Scanner.zip"
 
 Invoke-WebRequest -Uri $zipUrl -OutFile $zipPath
