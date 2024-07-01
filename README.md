@@ -32,7 +32,7 @@ ReadMe : [Francais](https://github.com/ArtemissFR/ODIN_Project/blob/main/Documen
    
    - Lancer ODIN en mode AUTO :
    ```bash
-   .\ODIN_V2.ps1
+   .\ODIN_V2.0.ps1
    ```
 
 # README IN PROGRESS ...
