@@ -4,6 +4,7 @@ Add-Type -AssemblyName System.Drawing
 
 # Chemin vers les fichiers que tu veux débloquer
 $scriptHardenADStart = "Harden-AD\Harden-AD_start.ps1"
+$scriptADACLScanner = "AD ACL Scanner\ADACLScan.ps1"
 
 # Utilisation de la cmdlet Unblock-File
 Unblock-File -Path $scriptHardenADStart
