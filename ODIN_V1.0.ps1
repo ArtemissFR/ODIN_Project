@@ -11,7 +11,7 @@ $scriptPurpleKnight = "PurpleKnight\PurpleKnight.ps1" # --> PurpleKnight
 $scriptRansomLord = "RansomLord\RansomLord_v3.1.ps1" # --> RansomLord
 $scriptADACLScanner = "ADACLScanner\ADACLScanner.ps1" # --> AD ACL Scanner
 $scriptODIN = "ODIN_V1.0.ps1" # --> ODIN Installer
-$scriptODINstart = "ODIN_start_V1.0.ps1" # --> ODIN Gui application launcher
+$scriptODINstart = "ODIN_Executer_V1.0.ps1" # --> ODIN Gui application launcher
 
 # Use of cmdlet Unblock-File --> Unblock script powershell
 Unblock-File -Path $scriptHelloMyDir # --> Hello-My-Dir
