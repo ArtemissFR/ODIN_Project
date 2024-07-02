@@ -15,7 +15,7 @@ $scriptPurpleKnight = "PurpleKnight\PurpleKnight.ps1" # --> PurpleKnight
 $scriptRansomLord = "RansomLord\RansomLord_v3.1.ps1" # --> RansomLord
 
 $scriptADACLScanner = "ADACLScanner\ADACLScanner.ps1" # --> AD ACL Scanner
-$scriptADACLScannerStart = "C:\ODIN\AD ACL Scanner\ADACLScan.ps1" # --> AD ACL Scanner
+$scriptADACLScannerStart = "C:\ODIN\AD ACL Scanner\ADACLScanner-master\ADACLScan.ps1" # --> AD ACL Scanner
 
 $scriptODIN = "ODIN_V1.0.ps1" # --> ODIN Installer
 $scriptODINExecuter = "ODIN_Executer_V1.0.ps1" # --> ODIN Gui application launcher
@@ -34,7 +34,6 @@ Unblock-File -Path $scriptPurpleKnight # --> PurpleKnight
 Unblock-File -Path $scriptRansomLord # --> RansomLord
 
 Unblock-File -Path $scriptADACLScanner # --> AD ACL Scanner
-Unblock-File -Path $scriptADACLScannerStart # --> AD ACL Scanner
 
 Unblock-File -Path $scriptODIN # --> ODIN Installer
 Unblock-File -Path $scriptODINExecuter # --> ODIN Gui application launcher
@@ -113,6 +112,8 @@ function Create-FormInstall {
     $button6_adaclscanner.Text = "AD ACL Scanner"
     $button6_adaclscanner.Add_Click({
         Start-Process powershell -ArgumentList "-File ADACLScanner\ADACLScanner.ps1"
+        Start-Sleep -Seconds 30 # Ajuste le temps d'attente si nécessaire
+        Unblock-File -Path $scriptADACLScannerStart # --> AD ACL Scanner
     })
     # BUTTON 6 --> AD ACL Scanner
 
