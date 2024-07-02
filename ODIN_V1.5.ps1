@@ -231,7 +231,7 @@ function Create-FormLaunch {
     $form.ShowDialog()
 }
 
-function Create-FormLaunch {
+function Create-FormHardenAD {
     $form = New-Object System.Windows.Forms.Form
     $form.Text = "[ODIN] - HardenAD"
     $form.Size = New-Object System.Drawing.Size(300,400)
