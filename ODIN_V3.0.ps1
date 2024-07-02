@@ -205,7 +205,7 @@ function Create-FormLaunch {
     $button5_exe_adaclscanner.Size = New-Object System.Drawing.Size(200,30)
     $button5_exe_adaclscanner.Text = "Execute AD ACL Scanner"
     $button5_exe_adaclscanner.Add_Click({
-        $adaclscanner_path = "C:\ODIN\AD ACL Scanner\ADACLScanner-master"
+        $adaclscanner_path = "'C:\ODIN\AD ACL Scanner\ADACLScanner-master\'"
         Start-Process powershell -ArgumentList "-NoProfile -NoExit -Command `"Set-Location -Path $adaclscanner_path; .\ADACLScan.ps1`""
     })
     # BUTTON 5 --> AD ACL Scanner
