@@ -194,7 +194,7 @@ function Create-FormLaunch {
     $button4_exe_purpleknight.Size = New-Object System.Drawing.Size(200,30)
     $button4_exe_purpleknight.Text = "Execute PurpleKnight"
     $button4_exe_purpleknight.Add_Click({
-        $purpleknight_path = "C:\ODIN\PurpleKnight\PK Community 4.2\"
+        $purpleknight_path = "'C:\ODIN\PurpleKnight\PK Community 4.2\'"
         Start-Process powershell -ArgumentList "-NoProfile -NoExit -Command `"Set-Location -Path $purpleknight_path; .\PurpleKnight.exe`""
     })
     # BUTTON 4 --> PURPLEKNIGHT
