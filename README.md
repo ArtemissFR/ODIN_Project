@@ -30,7 +30,7 @@ ReadMe : [Francais](https://github.com/ArtemissFR/ODIN_Project/blob/main/Documen
    .\ODIN_V1.5.ps1
    ```
    
-   - Lancer ODIN en mode AUTO (in progress...):
+   - Lancer ODIN en mode AUTO (en cours ...):
    ```bash
    .\ODIN_V2.0.ps1
    ```
