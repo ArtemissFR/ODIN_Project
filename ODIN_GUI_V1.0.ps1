@@ -27,10 +27,23 @@ $leftPanel.Controls.Add($buttonPanel)
 
 # Liste de commandes
 $commands = @{
-    "Commande 1" = { "Exécution de la commande 1" }
-    "Commande 2" = { "Exécution de la commande 2" }
-    "Commande 3" = { "Exécution de la commande 3" }
+    "Commande 1" = { Write-Output "Exécution de la commande 1" }
+    "Commande 2" = { Write-Output "Exécution de la commande 2" }
+    "Commande 3" = { Write-Output "Exécution de la commande 3" }
 }
+
+# Création de la partie droite (Affichage des résultats)
+$rightPanel = New-Object System.Windows.Forms.Panel
+$rightPanel.Size = New-Object System.Drawing.Size(500, 600)
+$rightPanel.Dock = [System.Windows.Forms.DockStyle]::Fill
+
+# Zone de texte pour afficher les résultats
+$outputBox = New-Object System.Windows.Forms.TextBox
+$outputBox.Multiline = $true
+$outputBox.Size = New-Object System.Drawing.Size(480, 560)
+$outputBox.Location = New-Object System.Drawing.Point(10, 10)
+$outputBox.ScrollBars = [System.Windows.Forms.ScrollBars]::Vertical
+$rightPanel.Controls.Add($outputBox)
 
 # Fonction pour créer les boutons
 function Create-Buttons {
@@ -57,19 +70,6 @@ Create-Buttons
 $searchBox.Add_TextChanged({
     Create-Buttons
 })
-
-# Création de la partie droite (Affichage des résultats)
-$rightPanel = New-Object System.Windows.Forms.Panel
-$rightPanel.Size = New-Object System.Drawing.Size(500, 600)
-$rightPanel.Dock = [System.Windows.Forms.DockStyle]::Fill
-
-# Zone de texte pour afficher les résultats
-$outputBox = New-Object System.Windows.Forms.TextBox
-$outputBox.Multiline = $true
-$outputBox.Size = New-Object System.Drawing.Size(480, 560)
-$outputBox.Location = New-Object System.Drawing.Point(10, 10)
-$outputBox.ScrollBars = [System.Windows.Forms.ScrollBars]::Vertical
-$rightPanel.Controls.Add($outputBox)
 
 # Ajout des panneaux à la fenêtre principale
 $form.Controls.Add($leftPanel)
