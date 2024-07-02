@@ -29,11 +29,15 @@ Unblock-File -Path $scriptODINExecuter # --> ODIN Gui application launcher
 
 function Create-FormInstall {
     $form = New-Object System.Windows.Forms.Form
-    $form.Text = "[ODIN] - Installer"
-    $form.Size = New-Object System.Drawing.Size(300,200)
+    $form.Text = "[ODIN] - DOWNLOADER / INSTALLER"
+    $form.Size = New-Object System.Drawing.Size(300,500)
+    $form.StartPosition = "CenterScreen"
+    $form.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedDialog
+    $form.MaximizeBox = $false
+    $form.MinimizeBox = $false
 
     $label = New-Object System.Windows.Forms.Label
-    $label.Text = "[ODIN] - Installer"
+    $label.Text = "[ODIN] - DOWNLOADER / INSTALLER"
     $label.Location = New-Object System.Drawing.Point(10,10)
     $form.Controls.Add($label)
 
@@ -103,7 +107,7 @@ function Create-FormInstall {
     # BUTTON 7 --> Next
     $button7_next = New-Object System.Windows.Forms.Button
     $button7_next.Text = "Next"
-    $button7_next.Location = New-Object System.Drawing.Point(200,130)
+    $button7_next.Location = New-Object System.Drawing.Point(200,290)
     $button7_next.Add_Click({ 
         $form.Hide()
         Create-FormLaunch
@@ -125,11 +129,15 @@ function Create-FormInstall {
 
 function Create-FormLaunch {
     $form = New-Object System.Windows.Forms.Form
-    $form.Text = "[ODIN] - Launcher"
-    $form.Size = New-Object System.Drawing.Size(300,200)
+    $form.Text = "[ODIN] - APPLICATION LAUNCHER"
+    $form.Size = New-Object System.Drawing.Size(300,400)
+    $form.StartPosition = "CenterScreen"
+    $form.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedDialog
+    $form.MaximizeBox = $false
+    $form.MinimizeBox = $false
 
     $label = New-Object System.Windows.Forms.Label
-    $label.Text = "[ODIN] - Launcher"
+    $label.Text = "[ODIN] - APPLICATION LAUNCHER"
     $label.Location = New-Object System.Drawing.Point(10,10)
     $form.Controls.Add($label)
 
