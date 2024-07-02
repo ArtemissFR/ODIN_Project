@@ -8,6 +8,8 @@ $scriptHelloMyDirConfig = "Hello-My-Dir\Hello_My_Dir_Config.ps1" # --> Hello-My-
 
 $scriptHardenAD = "Harden-AD\Harden-AD.ps1" # --> HardenAD
 $scriptHardenADStart = "Harden-AD\Harden-AD_start.ps1" # --> HardenAD
+$scriptRunHardenAD = "C:\ODIN\Harden-AD\HardenAD-Master\HardenAD.ps1" # --> HardenAD 
+$scriptRunHardenADGui = "C:\ODIN\Harden-AD\HardenAD-Master\Run-HardenADGui.ps1" # --> HardenAD
 
 $scriptPingCastle = "PingCastle\PingCastle.ps1" # --> PingCastle
 $scriptPurpleKnight = "PurpleKnight\PurpleKnight.ps1" # --> PurpleKnight
@@ -173,7 +175,9 @@ function Create-FormLaunch {
     $button2_exe_hardenad.Size = New-Object System.Drawing.Size(200,30)
     $button2_exe_hardenad.Text = "Execute Harden-AD"
     $button2_exe_hardenad.Add_Click({
-        Start-Process powershell -ArgumentList "-File Harden-AD\Harden-AD_start.ps1"
+        Unblock-File -Path $scriptRunHardenAD
+        Unblock-File -Path $scriptRunHardenADGui
+        Create-FormHardenAD
     })
     # BUTTON 2 --> HARDEN-AD
     
@@ -244,6 +248,41 @@ function Create-FormHardenAD {
     $label.Text = "[ODIN] - HardenAD"
 #    $label.Location = New-Object System.Drawing.Point(10,10)
     $form.Controls.Add($label)
+
+    # Création des Boutons
+    $button1_ConfigHarden = New-Object System.Windows.Forms.Button
+    $button1_ConfigHarden.Location = New-Object System.Drawing.Point(50,50)
+    $button1_ConfigHarden.Size = New-Object System.Drawing.Size(200,30)
+    $button1_ConfigHarden.Text = "Config Harden-AD"
+    $button1_ConfigHarden.Add_Click({
+        $hardenad_path = "C:\ODIN\Harden-AD\HardenAD-Master"
+        Start-Process powershell -ArgumentList "-NoProfile -NoExit -Command `"Set-Location -Path $hardenad_path; .\Run-HardenADGui`""
+    })
+    
+    $button2_LaunchHarden = New-Object System.Windows.Forms.Button
+    $button2_LaunchHarden.Location = New-Object System.Drawing.Point(50,90)
+    $button2_LaunchHarden.Size = New-Object System.Drawing.Size(200,30)
+    $button2_LaunchHarden.Text = "Launch Harden-AD"
+    $button2_LaunchHarden.Add_Click({
+        $hardenad_path = "C:\ODIN\Harden-AD\HardenAD-Master"
+        Start-Process powershell -ArgumentList "-NoProfile -NoExit -Command `"Set-Location -Path $hardenad_path; .\HardenAD`""
+    })
+    
+    $button3_finish = New-Object System.Windows.Forms.Button
+    $button3_finish.Location = New-Object System.Drawing.Point(50,130)
+    $button3_finish.Size = New-Object System.Drawing.Size(200,30)
+    $button3_finish.Text = "Finish"
+    $button3_finish.Add_Click({
+        $form.Close()
+    })
+    
+    # Ajout des contrôles à la Forme
+    $form.Controls.Add($button1_ConfigHarden) # --> Config Harden-AD
+    $form.Controls.Add($button2_LaunchHarden) # --> Launch Harden-AD
+    $form.Controls.Add($button3_finish) # --> Finish
+    
+    # Affichage de la Forme
+    $form.ShowDialog()
 
 }
 
