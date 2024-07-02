@@ -41,7 +41,7 @@ $button2.Add_Click({
 $buttonCancel = New-Object System.Windows.Forms.Button
 $buttonCancel.Location = New-Object System.Drawing.Point(50,130)
 $buttonCancel.Size = New-Object System.Drawing.Size(200,30)
-$buttonCancel.Text = "Terminer"
+$buttonCancel.Text = "Finish"
 $buttonCancel.Add_Click({
     $form.Close()
 })
