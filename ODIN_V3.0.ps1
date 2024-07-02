@@ -79,7 +79,7 @@ function Create-FormInstall {
     $button3_ransomlord = New-Object System.Windows.Forms.Button
     $button3_ransomlord.Location = New-Object System.Drawing.Point(50,130)
     $button3_ransomlord.Size = New-Object System.Drawing.Size(200,30)
-    $button3_ransomlord.Text = "RansomLord"
+    $button3_ransomlord.Text = "RansomLord (You will need to press Enter)"
     $button3_ransomlord.Add_Click({
         Start-Process powershell -ArgumentList "-File RansomLord\RansomLord_v3.1.ps1"
     })
