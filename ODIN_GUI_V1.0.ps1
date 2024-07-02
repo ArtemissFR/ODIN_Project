@@ -35,7 +35,7 @@ $searchPanel.Margin = "10"
 
 # Create the search box
 $searchBox = New-Object System.Windows.Controls.TextBox
-$searchBox.Width = 150
+$searchBox.Width = 180
 $searchBox.Margin = "0,10,10,0"
 $searchPanel.Children.Add($searchBox)
 
@@ -71,9 +71,11 @@ function Create-Button {
     $button.Margin = "5"
     $button.Width = 150
     $button.Add_Click({
-        $result = & $scriptBlock
-        $resultBox.AppendText("Output from $buttonContent:`n$result`n")
-        $resultBox.ScrollToEnd()
+        $result = & $scriptBlock | Out-String
+        $resultBox.Dispatcher.Invoke([action]{
+            $resultBox.AppendText("Output from $buttonContent:`n$result`n")
+            $resultBox.ScrollToEnd()
+        })
     })
     $button
 }
