@@ -56,7 +56,7 @@ function Create-FormInstall {
     $button1_hellomydir = New-Object System.Windows.Forms.Button
     $button1_hellomydir.Location = New-Object System.Drawing.Point(50,50)
     $button1_hellomydir.Size = New-Object System.Drawing.Size(200,30)
-    $button1_hellomydir.Text = "Hello-My-Dir"
+    $button1_hellomydir.Text = "Download Hello-My-Dir"
     $button1_hellomydir.Add_Click({
         Start-Process powershell -ArgumentList "-File Hello-My-Dir\Hello_My_Dir.ps1"
         # Attendre que le premier script se termine avant d'exécuter le second script
@@ -69,7 +69,7 @@ function Create-FormInstall {
     $button2_hardenad = New-Object System.Windows.Forms.Button
     $button2_hardenad.Location = New-Object System.Drawing.Point(50,90)
     $button2_hardenad.Size = New-Object System.Drawing.Size(200,30)
-    $button2_hardenad.Text = "Harden-AD (in progress ...)"
+    $button2_hardenad.Text = "Download Harden-AD"
     $button2_hardenad.Add_Click({
         Start-Process powershell -ArgumentList "-File Harden-AD\Harden-AD.ps1"
     })
@@ -79,7 +79,7 @@ function Create-FormInstall {
     $button3_ransomlord = New-Object System.Windows.Forms.Button
     $button3_ransomlord.Location = New-Object System.Drawing.Point(50,130)
     $button3_ransomlord.Size = New-Object System.Drawing.Size(200,30)
-    $button3_ransomlord.Text = "RansomLord (You will need to press Enter)"
+    $button3_ransomlord.Text = "Download RansomLord (You will need to press Enter)"
     $button3_ransomlord.Add_Click({
         Start-Process powershell -ArgumentList "-File RansomLord\RansomLord_v3.1.ps1"
     })
@@ -89,7 +89,7 @@ function Create-FormInstall {
     $button4_pingcastle = New-Object System.Windows.Forms.Button
     $button4_pingcastle.Location = New-Object System.Drawing.Point(50,170)
     $button4_pingcastle.Size = New-Object System.Drawing.Size(200,30)
-    $button4_pingcastle.Text = "PingCastle"
+    $button4_pingcastle.Text = "Download PingCastle"
     $button4_pingcastle.Add_Click({
         Start-Process powershell -ArgumentList "-File PingCastle\PingCastle.ps1"
     })
@@ -99,7 +99,7 @@ function Create-FormInstall {
     $button5_purpleknight = New-Object System.Windows.Forms.Button
     $button5_purpleknight.Location = New-Object System.Drawing.Point(50,210)
     $button5_purpleknight.Size = New-Object System.Drawing.Size(200,30)
-    $button5_purpleknight.Text = "PurpleKnight"
+    $button5_purpleknight.Text = "Download PurpleKnight"
     $button5_purpleknight.Add_Click({
         Start-Process powershell -ArgumentList "-File PurpleKnight\PurpleKnight.ps1"
     })
@@ -109,7 +109,7 @@ function Create-FormInstall {
     $button6_adaclscanner = New-Object System.Windows.Forms.Button
     $button6_adaclscanner.Location = New-Object System.Drawing.Point(50,250)
     $button6_adaclscanner.Size = New-Object System.Drawing.Size(200,30)
-    $button6_adaclscanner.Text = "AD ACL Scanner"
+    $button6_adaclscanner.Text = "Download AD ACL Scanner"
     $button6_adaclscanner.Add_Click({
         Start-Process powershell -ArgumentList "-File ADACLScanner\ADACLScanner.ps1"
         Start-Sleep -Seconds 30 # Ajuste le temps d'attente si nécessaire
@@ -119,7 +119,7 @@ function Create-FormInstall {
 
     # BUTTON 7 --> Next
     $button7_next = New-Object System.Windows.Forms.Button
-    $button7_next.Text = "Next"
+    $button7_next.Text = "Next ..."
     $button7_next.Location = New-Object System.Drawing.Point(200,290)
     $button7_next.Add_Click({ 
         $form.Hide()
@@ -158,7 +158,7 @@ function Create-FormLaunch {
     $button1_exe_hellomydir = New-Object System.Windows.Forms.Button
     $button1_exe_hellomydir.Location = New-Object System.Drawing.Point(50,50)
     $button1_exe_hellomydir.Size = New-Object System.Drawing.Size(200,30)
-    $button1_exe_hellomydir.Text = "Hello-My-Dir"
+    $button1_exe_hellomydir.Text = "Execute Hello-My-Dir"
     $button1_exe_hellomydir.Add_Click({
         Start-Process powershell -ArgumentList "-File Hello-My-Dir\Hello_My_Dir.ps1"
         # Attendre que le premier script se termine avant d'exécuter le second script
