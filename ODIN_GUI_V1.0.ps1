@@ -25,12 +25,11 @@ $buttonPanel.Size = New-Object System.Drawing.Size(280, 550)
 $buttonPanel.Location = New-Object System.Drawing.Point(10, 40)
 $leftPanel.Controls.Add($buttonPanel)
 
-# Liste de boutons
-$buttons = @()
+# Liste de commandes
 $commands = @{
-    "Commande 1" = { Write-Output "Exécution de la commande 1" }
-    "Commande 2" = { Write-Output "Exécution de la commande 2" }
-    "Commande 3" = { Write-Output "Exécution de la commande 3" }
+    "Commande 1" = { "Exécution de la commande 1" }
+    "Commande 2" = { "Exécution de la commande 2" }
+    "Commande 3" = { "Exécution de la commande 3" }
 }
 
 # Fonction pour créer les boutons
@@ -47,7 +46,6 @@ function Create-Buttons {
             $outputBox.Text = & $commands[$command]
         })
         $buttonPanel.Controls.Add($button)
-        $buttons += $button
         $yPos += 40
     }
 }
