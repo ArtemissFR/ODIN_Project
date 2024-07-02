@@ -3,6 +3,7 @@
 - Install = *ok*
 - Launch = *ok*
 - Status = *ok*
+---
 ## RANSOMLORD
 - Download = *ok*
 - Install = *ok*
