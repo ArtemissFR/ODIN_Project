@@ -9,6 +9,7 @@ $form.Size = New-Object System.Drawing.Size(400,300)
 $form.StartPosition = "CenterScreen"
 $form.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedDialog
 $form.MaximizeBox = $false
+$form.MinimizeBox = $false
 
 # Création du Panel avec barre de défilement
 $panel = New-Object System.Windows.Forms.Panel
