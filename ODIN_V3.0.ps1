@@ -1,4 +1,5 @@
 Add-Type -AssemblyName System.Windows.Forms
+Add-Type -AssemblyName System.Drawing
 
 function Create-FormInstall {
     $form = New-Object System.Windows.Forms.Form
