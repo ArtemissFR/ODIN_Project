@@ -1,12 +1,12 @@
 Add-Type -AssemblyName System.Windows.Forms
 
-function Create-Form1 {
+function Create-FormInstall {
     $form = New-Object System.Windows.Forms.Form
-    $form.Text = "Installation"
+    $form.Text = "[ODIN] - Installer"
     $form.Size = New-Object System.Drawing.Size(300,200)
 
     $label = New-Object System.Windows.Forms.Label
-    $label.Text = "Installation"
+    $label.Text = "[ODIN] - Installer"
     $label.Location = New-Object System.Drawing.Point(10,10)
     $form.Controls.Add($label)
 
@@ -15,7 +15,7 @@ function Create-Form1 {
     $nextButton.Location = New-Object System.Drawing.Point(200,130)
     $nextButton.Add_Click({ 
         $form.Hide()
-        Create-Form2
+        Create-FormLaunch
         $form.Close()
     })
     $form.Controls.Add($nextButton)
@@ -23,13 +23,13 @@ function Create-Form1 {
     $form.ShowDialog()
 }
 
-function Create-Form2 {
+function Create-FormLaunch {
     $form = New-Object System.Windows.Forms.Form
-    $form.Text = "Lancement"
+    $form.Text = "[ODIN] - Launcher"
     $form.Size = New-Object System.Drawing.Size(300,200)
 
     $label = New-Object System.Windows.Forms.Label
-    $label.Text = "Lancement"
+    $label.Text = "[ODIN] - Launcher"
     $label.Location = New-Object System.Drawing.Point(10,10)
     $form.Controls.Add($label)
 
@@ -37,11 +37,11 @@ function Create-Form2 {
     $launchButton.Text = "Launch"
     $launchButton.Location = New-Object System.Drawing.Point(200,130)
     $launchButton.Add_Click({
-        [System.Windows.Forms.MessageBox]::Show("Lancement réussi !")
+#        [System.Windows.Forms.MessageBox]::Show(" !")
     })
     $form.Controls.Add($launchButton)
 
     $form.ShowDialog()
 }
 
-Create-Form1
+Create-FormInstall
