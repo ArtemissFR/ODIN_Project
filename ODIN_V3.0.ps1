@@ -10,7 +10,7 @@ $scriptPingCastle = "PingCastle\PingCastle.ps1" # --> PingCastle
 $scriptPurpleKnight = "PurpleKnight\PurpleKnight.ps1" # --> PurpleKnight
 $scriptRansomLord = "RansomLord\RansomLord_v3.1.ps1" # --> RansomLord
 $scriptADACLScanner = "ADACLScanner\ADACLScanner.ps1" # --> AD ACL Scanner
-$scriptADACLScannerStart = "AD ACL Scanner\ADACLScan.ps1" # --> AD ACL Scanner
+$scriptADACLScannerStart = "C:\ODIN\AD ACL Scanner\ADACLScan.ps1" # --> AD ACL Scanner
 $scriptODIN = "ODIN_V1.0.ps1" # --> ODIN Installer
 $scriptODINExecuter = "ODIN_Executer_V1.0.ps1" # --> ODIN Gui application launcher
 
