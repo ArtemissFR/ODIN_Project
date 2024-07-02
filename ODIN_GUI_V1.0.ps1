@@ -29,19 +29,21 @@ $grid.RowDefinitions.Add($row2)
 # Create the search box panel
 $searchPanel = New-Object System.Windows.Controls.StackPanel
 $searchPanel.Orientation = "Horizontal"
+$searchPanel.Margin = "10"
 [System.Windows.Controls.Grid]::SetColumn($searchPanel, 0)
 [System.Windows.Controls.Grid]::SetRow($searchPanel, 0)
 
 # Create the search box
 $searchBox = New-Object System.Windows.Controls.TextBox
 $searchBox.Width = 150
-$searchBox.Margin = "10,10,10,10"
+$searchBox.Margin = "0,10,10,0"
 $searchPanel.Children.Add($searchBox)
 
 # Create the button panel on the left
 $buttonPanel = New-Object System.Windows.Controls.StackPanel
 $buttonPanel.Orientation = "Vertical"
 $buttonPanel.HorizontalAlignment = "Center"
+$buttonPanel.Margin = "10"
 [System.Windows.Controls.Grid]::SetColumn($buttonPanel, 0)
 [System.Windows.Controls.Grid]::SetRow($buttonPanel, 1)
 
@@ -51,6 +53,9 @@ $resultBox.AcceptsReturn = $true
 $resultBox.VerticalScrollBarVisibility = "Auto"
 $resultBox.HorizontalScrollBarVisibility = "Auto"
 $resultBox.Margin = "10"
+$resultBox.IsReadOnly = $true
+$resultBox.FontFamily = "Consolas"
+$resultBox.FontSize = 12
 [System.Windows.Controls.Grid]::SetColumn($resultBox, 1)
 [System.Windows.Controls.Grid]::SetRow($resultBox, 0)
 [System.Windows.Controls.Grid]::SetRowSpan($resultBox, 2)
@@ -66,8 +71,14 @@ function Create-Button {
     $button.Margin = "5"
     $button.Width = 150
     $button.Add_Click({
-        $result = & $scriptBlock
-        $resultBox.Text += "$result`n"
+        Start-Job -ScriptBlock {
+            $result = & $using:scriptBlock
+            $result | Out-String
+        } | Receive-Job -Wait | ForEach-Object {
+            $resultBox.Dispatcher.Invoke([action]{
+                $resultBox.AppendText("Output from $buttonContent:`n$_`n")
+            })
+        }
     })
     $button
 }
