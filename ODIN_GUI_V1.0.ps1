@@ -48,7 +48,7 @@ $button3.Location = New-Object System.Drawing.Point($centerX, 150)
 $button3.Size = New-Object System.Drawing.Size($buttonWidth, 30)
 $button3.Text = "Start command 3"
 $button3.Add_Click({
-    Execute-Command3
+    ls
 })
 $buttons += $button3
 
