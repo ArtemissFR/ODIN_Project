@@ -231,4 +231,20 @@ function Create-FormLaunch {
     $form.ShowDialog()
 }
 
+function Create-FormLaunch {
+    $form = New-Object System.Windows.Forms.Form
+    $form.Text = "[ODIN] - HardenAD"
+    $form.Size = New-Object System.Drawing.Size(300,400)
+    $form.StartPosition = "CenterScreen"
+    $form.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedDialog
+    $form.MaximizeBox = $false
+    $form.MinimizeBox = $false
+
+    $label = New-Object System.Windows.Forms.Label
+    $label.Text = "[ODIN] - HardenAD"
+#    $label.Location = New-Object System.Drawing.Point(10,10)
+    $form.Controls.Add($label)
+
+}
+
 Create-FormInstall
