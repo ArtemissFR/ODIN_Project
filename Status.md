@@ -22,4 +22,9 @@
 - Download = *ok*
 - Install = *ok*
 - Launch = *in progress...*
-- Status = *ok*
+- Status = *in progress...*
+## AD ACL Scanner
+- Download = *ok*
+- Install = *ok*
+- Launch = *in progress...*
+- Status = *in progress...*
