@@ -110,7 +110,15 @@ function Create-FormInstall {
         $form.Close()
     })
     # BUTTON 7 --> Next   
-    $form.Controls.Add($button7_next)
+
+    # Ajout des contrôles à la Forme
+    $form.Controls.Add($button1_hellomydir) # --> Hello-My-Dir
+    $form.Controls.Add($button2_hardenad) # --> Harden-AD
+    $form.Controls.Add($button3_ransomlord) # --> RansomLord
+    $form.Controls.Add($button4_pingcastle) # --> PingCastle
+    $form.Controls.Add($button5_purpleknight) # --> PurpleKnight
+    $form.Controls.Add($button6_adaclscanner) # --> AD ACL Scanner
+    $form.Controls.Add($button7_next) # --> ODIN application launcher
 
     $form.ShowDialog()
 }
