@@ -4,7 +4,7 @@ $destinationPath = "C:\ODIN\Hello-My-Dir\Hello-My-Dir-main\Configuration\RunSetu
 
 if (-Not (Test-Path -Path $destinationPath)) {
     Copy-Item -Path $sourcePath -Destination $destinationPath
-    Write-Host "Fichier RunSetup.xml copié avec succès."
+    Write-Host "File RunSetup.xml copied successfully."
 } else {
-    Write-Host "Le fichier RunSetup.xml existe déjà dans le dossier destination."
+    Write-Host "The file RunSetup.xml already exists in the destination folder."
 }
