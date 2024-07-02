@@ -1,80 +1,72 @@
-# Importation des modules nécessaires
-Add-Type -AssemblyName System.Windows.Forms
-Add-Type -AssemblyName System.Drawing
+Add-Type -AssemblyName PresentationFramework
 
 # Création de la fenêtre principale
-$form = New-Object System.Windows.Forms.Form
-$form.Text = "Mon Interface GUI"
-$form.Size = New-Object System.Drawing.Size(800, 600)
-$form.StartPosition = "CenterScreen"
+$window = New-Object system.windows.window
+$window.Title = "PowerShell GUI"
+$window.Width = 400
+$window.Height = 600
+$window.WindowStartupLocation = "CenterScreen"
 
-# Création de la partie gauche (Panneau des boutons et barre de recherche)
-$leftPanel = New-Object System.Windows.Forms.Panel
-$leftPanel.Size = New-Object System.Drawing.Size(300, 600)
-$leftPanel.Dock = [System.Windows.Forms.DockStyle]::Left
+# Création d'une Grid pour l'organisation des éléments
+$grid = New-Object system.windows.controls.grid
+$window.Content = $grid
 
-# Barre de recherche
-$searchBox = New-Object System.Windows.Forms.TextBox
-$searchBox.Size = New-Object System.Drawing.Size(280, 20)
-$searchBox.Location = New-Object System.Drawing.Point(10, 10)
-$leftPanel.Controls.Add($searchBox)
+# Ajout des lignes et colonnes à la Grid
+$rowDef1 = New-Object system.windows.controls.rowdefinition
+$rowDef1.Height = "Auto"
+$grid.RowDefinitions.Add($rowDef1)
 
-# Panneau pour les boutons
-$buttonPanel = New-Object System.Windows.Forms.Panel
-$buttonPanel.Size = New-Object System.Drawing.Size(280, 550)
-$buttonPanel.Location = New-Object System.Drawing.Point(10, 40)
-$leftPanel.Controls.Add($buttonPanel)
+$rowDef2 = New-Object system.windows.controls.rowdefinition
+$grid.RowDefinitions.Add($rowDef2)
 
-# Liste de commandes
-$commands = @{
-    "Commande 1" = { Write-Output "Exécution de la commande 1" }
-    "Commande 2" = { Write-Output "Exécution de la commande 2" }
-    "Commande 3" = { Write-Output "Exécution de la commande 3" }
-}
+# Création de la barre de recherche
+$searchBox = New-Object system.windows.controls.textbox
+$searchBox.Margin = "10"
+$searchBox.Height = 30
+$searchBox.VerticalAlignment = "Top"
+[system.windows.controls.grid]::SetRow($searchBox, 0)
+$grid.Children.Add($searchBox)
 
-# Création de la partie droite (Affichage des résultats)
-$rightPanel = New-Object System.Windows.Forms.Panel
-$rightPanel.Size = New-Object System.Drawing.Size(500, 600)
-$rightPanel.Dock = [System.Windows.Forms.DockStyle]::Fill
+# Création d'une StackPanel pour les boutons
+$buttonPanel = New-Object system.windows.controls.stackpanel
+$buttonPanel.Orientation = "Vertical"
+$buttonPanel.HorizontalAlignment = "Center"
+$buttonPanel.VerticalAlignment = "Top"
+$buttonPanel.Margin = "10"
+[system.windows.controls.grid]::SetRow($buttonPanel, 1)
+$grid.Children.Add($buttonPanel)
 
-# Zone de texte pour afficher les résultats
-$outputBox = New-Object System.Windows.Forms.TextBox
-$outputBox.Multiline = $true
-$outputBox.Size = New-Object System.Drawing.Size(480, 560)
-$outputBox.Location = New-Object System.Drawing.Point(10, 10)
-$outputBox.ScrollBars = [System.Windows.Forms.ScrollBars]::Vertical
-$rightPanel.Controls.Add($outputBox)
+# Liste des scripts ou commandes
+$scripts = @(
+    @{Name="Script 1"; Command="Write-Host 'Script 1 executed'"},
+    @{Name="Script 2"; Command="Write-Host 'Script 2 executed'"},
+    @{Name="Script 3"; Command="Write-Host 'Script 3 executed'"},
+    # Ajoute autant de scripts que nécessaire ici
+)
 
 # Fonction pour créer les boutons
 function Create-Buttons {
-    $buttonPanel.Controls.Clear()
-    $filteredCommands = $commands.Keys | Where-Object { $_ -like "*$($searchBox.Text)*" }
-    $yPos = 10
-    foreach ($command in $filteredCommands) {
-        $button = New-Object System.Windows.Forms.Button
-        $button.Text = $command
-        $button.Size = New-Object System.Drawing.Size(260, 30)
-        $button.Location = New-Object System.Drawing.Point(10, $yPos)
+    $buttonPanel.Children.Clear()
+    $filteredScripts = $scripts | Where-Object { $_.Name -like "*$($searchBox.Text)*" }
+    foreach ($script in $filteredScripts) {
+        $button = New-Object system.windows.controls.button
+        $button.Content = $script.Name
+        $button.Margin = "5"
+        $button.Width = 150
         $button.Add_Click({
-            $outputBox.Text = & $commands[$command]
+            Invoke-Expression $script.Command
         })
-        $buttonPanel.Controls.Add($button)
-        $yPos += 40
+        $buttonPanel.Children.Add($button)
     }
 }
 
-# Initialiser les boutons
+# Création initiale des boutons
 Create-Buttons
 
-# Ajouter un événement pour la barre de recherche
+# Ajout d'un événement pour mettre à jour les boutons en fonction de la recherche
 $searchBox.Add_TextChanged({
     Create-Buttons
 })
 
-# Ajout des panneaux à la fenêtre principale
-$form.Controls.Add($leftPanel)
-$form.Controls.Add($rightPanel)
-
 # Affichage de la fenêtre
-$form.Add_Shown({$form.Activate()})
-[void]$form.ShowDialog()
+$window.ShowDialog()
