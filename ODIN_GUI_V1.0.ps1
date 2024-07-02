@@ -1,59 +1,80 @@
+# Chargement des Assemblies nécessaires
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
-# Création du formulaire
+# Création de la fenêtre principale
 $form = New-Object System.Windows.Forms.Form
-$form.Text = "Interface Utilisateur PowerShell"
-$form.Size = New-Object System.Drawing.Size(500, 400)
+$form.Text = "ODIN GUI"
+$form.Size = New-Object System.Drawing.Size(400,300)
 $form.StartPosition = "CenterScreen"
+$form.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedDialog
+$form.MaximizeBox = $false
 
-# Création de la barre de recherche
-$searchBox = New-Object System.Windows.Forms.TextBox
-$searchBox.Location = New-Object System.Drawing.Point(10, 10)
-$searchBox.Size = New-Object System.Drawing.Size(460, 30)
-$form.Controls.Add($searchBox)
+# Création du Panel avec barre de défilement
+$panel = New-Object System.Windows.Forms.Panel
+$panel.Location = New-Object System.Drawing.Point(0,0)
+$panel.Size = New-Object System.Drawing.Size(400,300)
+$panel.AutoScroll = $true
 
-# Création du panel pour les boutons
-$buttonPanel = New-Object System.Windows.Forms.FlowLayoutPanel
-$buttonPanel.Location = New-Object System.Drawing.Point(10, 50)
-$buttonPanel.Size = New-Object System.Drawing.Size(460, 300)
-$buttonPanel.FlowDirection = "TopDown"
-$buttonPanel.WrapContents = $true
-$buttonPanel.AutoScroll = $true
-$form.Controls.Add($buttonPanel)
-
-# Dictionnaire des commandes à exécuter
-$commands = @{
-    "Script 1" = { Write-Host "Exécution du Script 1"; Start-Sleep -Seconds 1 }
-    "Script 2" = { Write-Host "Exécution du Script 2"; Start-Sleep -Seconds 1 }
-    "Script 3" = { Write-Host "Exécution du Script 3"; Start-Sleep -Seconds 1 }
+# Fonction pour exécuter les commandes
+function Execute-Command1 {
+    Write-Output "Commande pour Option 1 exécutée"
+    # Place ici la commande ou le script pour Option 1
 }
 
-# Fonction pour mettre à jour les boutons en fonction de la recherche
-function Update-Buttons {
-    $searchText = $searchBox.Text.ToLower()
-    $buttonPanel.Controls.Clear()
-    foreach ($command in $commands.GetEnumerator()) {
-        if ($command.Key.ToLower().Contains($searchText)) {
-            $button = New-Object System.Windows.Forms.Button
-            $button.Text = $command.Key
-            $button.Width = 400
-            $button.Add_Click({
-                $command.Value.Invoke()
-            })
-            $buttonPanel.Controls.Add($button)
-        }
-    }
+function Execute-Command2 {
+    Write-Output "Commande pour Option 2 exécutée"
+    # Place ici la commande ou le script pour Option 2
 }
 
-# Ajouter les boutons au départ
-Update-Buttons
+function Execute-Command3 {
+    Write-Output "Commande pour Option 3 exécutée"
+    # Place ici la commande ou le script pour Option 3
+}
 
-# Événement lors de la saisie dans la barre de recherche
-$searchBox.Add_TextChanged({
-    Update-Buttons
+# Calcul de la position horizontale pour centrer les boutons
+$buttonWidth = 300
+$formWidth = $panel.ClientSize.Width
+$centerX = ($formWidth - $buttonWidth) / 2
+
+# Création des boutons
+$buttons = @()
+
+$button1 = New-Object System.Windows.Forms.Button
+$button1.Location = New-Object System.Drawing.Point($centerX, 50)
+$button1.Size = New-Object System.Drawing.Size($buttonWidth, 30)
+$button1.Text = "Exécuter la commande pour l'Option 1"
+$button1.Add_Click({
+    Execute-Command1
 })
+$buttons += $button1
 
-# Affichage du formulaire
+$button2 = New-Object System.Windows.Forms.Button
+$button2.Location = New-Object System.Drawing.Point($centerX, 100)
+$button2.Size = New-Object System.Drawing.Size($buttonWidth, 30)
+$button2.Text = "Exécuter la commande pour l'Option 2"
+$button2.Add_Click({
+    Execute-Command2
+})
+$buttons += $button2
+
+$button3 = New-Object System.Windows.Forms.Button
+$button3.Location = New-Object System.Drawing.Point($centerX, 150)
+$button3.Size = New-Object System.Drawing.Size($buttonWidth, 30)
+$button3.Text = "Exécuter la commande pour l'Option 3"
+$button3.Add_Click({
+    Execute-Command3
+})
+$buttons += $button3
+
+# Ajout des boutons au Panel
+foreach ($button in $buttons) {
+    $panel.Controls.Add($button)
+}
+
+# Ajout du Panel à la fenêtre principale
+$form.Controls.Add($panel)
+
+# Affichage de la fenêtre
 $form.Add_Shown({ $form.Activate() })
-[void]$form.ShowDialog()
+[System.Windows.Forms.Application]::Run($form)
