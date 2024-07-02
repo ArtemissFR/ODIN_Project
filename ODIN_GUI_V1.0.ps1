@@ -1,72 +1,59 @@
-Add-Type -AssemblyName PresentationFramework
+Add-Type -AssemblyName System.Windows.Forms
+Add-Type -AssemblyName System.Drawing
 
-# Création de la fenêtre principale
-$window = New-Object system.windows.window
-$window.Title = "PowerShell GUI"
-$window.Width = 400
-$window.Height = 600
-$window.WindowStartupLocation = "CenterScreen"
-
-# Création d'une Grid pour l'organisation des éléments
-$grid = New-Object system.windows.controls.grid
-$window.Content = $grid
-
-# Ajout des lignes et colonnes à la Grid
-$rowDef1 = New-Object system.windows.controls.rowdefinition
-$rowDef1.Height = "Auto"
-$grid.RowDefinitions.Add($rowDef1)
-
-$rowDef2 = New-Object system.windows.controls.rowdefinition
-$grid.RowDefinitions.Add($rowDef2)
+# Création du formulaire
+$form = New-Object System.Windows.Forms.Form
+$form.Text = "Interface Utilisateur PowerShell"
+$form.Size = New-Object System.Drawing.Size(500, 400)
+$form.StartPosition = "CenterScreen"
 
 # Création de la barre de recherche
-$searchBox = New-Object system.windows.controls.textbox
-$searchBox.Margin = "10"
-$searchBox.Height = 30
-$searchBox.VerticalAlignment = "Top"
-[system.windows.controls.grid]::SetRow($searchBox, 0)
-$grid.Children.Add($searchBox)
+$searchBox = New-Object System.Windows.Forms.TextBox
+$searchBox.Location = New-Object System.Drawing.Point(10, 10)
+$searchBox.Size = New-Object System.Drawing.Size(460, 30)
+$form.Controls.Add($searchBox)
 
-# Création d'une StackPanel pour les boutons
-$buttonPanel = New-Object system.windows.controls.stackpanel
-$buttonPanel.Orientation = "Vertical"
-$buttonPanel.HorizontalAlignment = "Center"
-$buttonPanel.VerticalAlignment = "Top"
-$buttonPanel.Margin = "10"
-[system.windows.controls.grid]::SetRow($buttonPanel, 1)
-$grid.Children.Add($buttonPanel)
+# Création du panel pour les boutons
+$buttonPanel = New-Object System.Windows.Forms.FlowLayoutPanel
+$buttonPanel.Location = New-Object System.Drawing.Point(10, 50)
+$buttonPanel.Size = New-Object System.Drawing.Size(460, 300)
+$buttonPanel.FlowDirection = "TopDown"
+$buttonPanel.WrapContents = $true
+$buttonPanel.AutoScroll = $true
+$form.Controls.Add($buttonPanel)
 
-# Liste des scripts ou commandes
-$scripts = @(
-    @{Name="Script 1"; Command="Write-Host 'Script 1 executed'"},
-    @{Name="Script 2"; Command="Write-Host 'Script 2 executed'"},
-    @{Name="Script 3"; Command="Write-Host 'Script 3 executed'"},
-    # Ajoute autant de scripts que nécessaire ici
-)
+# Dictionnaire des commandes à exécuter
+$commands = @{
+    "Script 1" = { Write-Host "Exécution du Script 1"; Start-Sleep -Seconds 1 }
+    "Script 2" = { Write-Host "Exécution du Script 2"; Start-Sleep -Seconds 1 }
+    "Script 3" = { Write-Host "Exécution du Script 3"; Start-Sleep -Seconds 1 }
+}
 
-# Fonction pour créer les boutons
-function Create-Buttons {
-    $buttonPanel.Children.Clear()
-    $filteredScripts = $scripts | Where-Object { $_.Name -like "*$($searchBox.Text)*" }
-    foreach ($script in $filteredScripts) {
-        $button = New-Object system.windows.controls.button
-        $button.Content = $script.Name
-        $button.Margin = "5"
-        $button.Width = 150
-        $button.Add_Click({
-            Invoke-Expression $script.Command
-        })
-        $buttonPanel.Children.Add($button)
+# Fonction pour mettre à jour les boutons en fonction de la recherche
+function Update-Buttons {
+    $searchText = $searchBox.Text.ToLower()
+    $buttonPanel.Controls.Clear()
+    foreach ($command in $commands.GetEnumerator()) {
+        if ($command.Key.ToLower().Contains($searchText)) {
+            $button = New-Object System.Windows.Forms.Button
+            $button.Text = $command.Key
+            $button.Width = 400
+            $button.Add_Click({
+                $command.Value.Invoke()
+            })
+            $buttonPanel.Controls.Add($button)
+        }
     }
 }
 
-# Création initiale des boutons
-Create-Buttons
+# Ajouter les boutons au départ
+Update-Buttons
 
-# Ajout d'un événement pour mettre à jour les boutons en fonction de la recherche
+# Événement lors de la saisie dans la barre de recherche
 $searchBox.Add_TextChanged({
-    Create-Buttons
+    Update-Buttons
 })
 
-# Affichage de la fenêtre
-$window.ShowDialog()
+# Affichage du formulaire
+$form.Add_Shown({ $form.Activate() })
+[void]$form.ShowDialog()
