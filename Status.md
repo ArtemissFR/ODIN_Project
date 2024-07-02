@@ -26,5 +26,5 @@
 ## AD ACL Scanner
 - Download = *ok*
 - Install = *ok*
-- Launch = *in progress...*
-- Status = *in progress...*
+- Launch = *ok*
+- Status = *ok*
