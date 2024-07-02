@@ -71,14 +71,9 @@ function Create-Button {
     $button.Margin = "5"
     $button.Width = 150
     $button.Add_Click({
-        Start-Job -ScriptBlock {
-            $result = & $using:scriptBlock
-            $result | Out-String
-        } | Receive-Job -Wait | ForEach-Object {
-            $resultBox.Dispatcher.Invoke([action]{
-                $resultBox.AppendText("Output from $buttonContent:`n$_`n")
-            })
-        }
+        $result = & $scriptBlock
+        $resultBox.AppendText("Output from $buttonContent:`n$result`n")
+        $resultBox.ScrollToEnd()
     })
     $button
 }
