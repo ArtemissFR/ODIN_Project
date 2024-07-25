@@ -160,10 +160,6 @@ function Create-FormLaunch {
     $button1_exe_hellomydir.Size = New-Object System.Drawing.Size(200,30)
     $button1_exe_hellomydir.Text = "Execute Hello-My-Dir"
     $button1_exe_hellomydir.Add_Click({
-        Start-Process powershell -ArgumentList "-File Hello-My-Dir\Hello_My_Dir.ps1"
-        # Attendre que le premier script se termine avant d'exécuter le second script
-        Start-Sleep -Seconds 30 # Ajuste le temps d'attente si nécessaire
-        Start-Process powershell -ArgumentList "-File Hello-My-Dir\Hello_My_Dir_Config.ps1"
     })
     # BUTTON 1 --> HELLO-MY-DIR
     
