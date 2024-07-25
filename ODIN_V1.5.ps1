@@ -53,10 +53,10 @@ function Create-FormInstall {
     
     # Créer les éléments du menu
     $menuItemAbout = New-Object System.Windows.Forms.ToolStripMenuItem
-    $menuItemAbout.Text = "A propos"
+    $menuItemAbout.Text = "About"
     
     $menuItemTools = New-Object System.Windows.Forms.ToolStripMenuItem
-    $menuItemTools.Text = "Autres outils"
+    $menuItemTools.Text = "Other Tools"
     
     # Ajouter les éléments du menu à la barre de navigation
     $menuStrip.Items.Add($menuItemAbout)
@@ -67,11 +67,12 @@ function Create-FormInstall {
     
     # Définir les événements des boutons
     $menuItemAbout.Add_Click({
-        [System.Windows.Forms.MessageBox]::Show("ODIN Project : Version 1.5", "A propos")
+        $message = "ODIN Project : Version 1.5" + [System.Environment]::NewLine + "Project by Louis Provost"
+        [System.Windows.Forms.MessageBox]::Show($message, "About")
     })
     
     $menuItemTools.Add_Click({
-        [System.Windows.Forms.MessageBox]::Show("Soon ...", "Autres outils")
+        [System.Windows.Forms.MessageBox]::Show("Soon ...", "Other Tools")
     })
 ###########################################################################
 
