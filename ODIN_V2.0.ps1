@@ -9,6 +9,7 @@ $scripts = @(
     "RansomLord\RansomLord_v3.1.ps1",
     "PingCastle\PingCastle.ps1",
     "PurpleKnight\PurpleKnight.ps1"
+    "ADACLScanner\ADACLScanner.ps1"
     # Ajoute d'autres scripts si nécessaire
 )
 
