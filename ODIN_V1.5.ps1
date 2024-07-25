@@ -19,8 +19,7 @@ $scriptRansomLord = "RansomLord\RansomLord_v3.1.ps1" # --> RansomLord
 $scriptADACLScanner = "ADACLScanner\ADACLScanner.ps1" # --> AD ACL Scanner
 $scriptADACLScannerStart = "C:\ODIN\AD ACL Scanner\ADACLScanner-master\ADACLScan.ps1" # --> AD ACL Scanner
 
-$scriptODIN = "ODIN_V1.0.ps1" # --> ODIN Installer
-$scriptODINExecuter = "ODIN_Executer_V1.0.ps1" # --> ODIN Gui application launcher
+$scriptODIN = "ODIN_V1.5.ps1" # --> ODIN Installer
 
 # Use of cmdlet Unblock-File --> Unblock script powershell
 
@@ -38,7 +37,6 @@ Unblock-File -Path $scriptRansomLord # --> RansomLord
 Unblock-File -Path $scriptADACLScanner # --> AD ACL Scanner
 
 Unblock-File -Path $scriptODIN # --> ODIN Installer
-Unblock-File -Path $scriptODINExecuter # --> ODIN Gui application launcher
 
 function Create-FormInstall {
     $form = New-Object System.Windows.Forms.Form
