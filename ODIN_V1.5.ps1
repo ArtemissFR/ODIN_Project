@@ -70,9 +70,10 @@ function Create-FormInstall {
         $message = "ODIN Project : Version 1.5" + [System.Environment]::NewLine + "Project by Louis Provost"
         [System.Windows.Forms.MessageBox]::Show($message, "About")
     })
-    
+        
     $menuItemTools.Add_Click({
-        [System.Windows.Forms.MessageBox]::Show("Soon ...", "Other Tools")
+        $htmlFilePath = "Documentation\Tools\index.html"  # Remplace par le chemin de ton fichier HTML
+        [System.Diagnostics.Process]::Start("explorer.exe", $htmlFilePath)
     })
 ###########################################################################
 
