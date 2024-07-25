@@ -52,6 +52,34 @@ function Create-FormInstall {
  #   $label.Location = New-Object System.Drawing.Point(10,10)
     $form.Controls.Add($label)
 
+###########################################################################
+    # Créer la barre de navigation (MenuStrip)
+    $menuStrip = New-Object System.Windows.Forms.MenuStrip
+    
+    # Créer les éléments du menu
+    $menuItemAbout = New-Object System.Windows.Forms.ToolStripMenuItem
+    $menuItemAbout.Text = "À propos"
+    
+    $menuItemTools = New-Object System.Windows.Forms.ToolStripMenuItem
+    $menuItemTools.Text = "Autres outils"
+    
+    # Ajouter les éléments du menu à la barre de navigation
+    $menuStrip.Items.Add($menuItemAbout)
+    $menuStrip.Items.Add($menuItemTools)
+    
+    # Ajouter la barre de navigation au formulaire
+    $form.Controls.Add($menuStrip)
+    
+    # Définir les événements des boutons
+    $menuItemAbout.Add_Click({
+        [System.Windows.Forms.MessageBox]::Show("À propos : Ceci est un exemple de formulaire PowerShell avec une barre de navigation.", "À propos")
+    })
+    
+    $menuItemTools.Add_Click({
+        [System.Windows.Forms.MessageBox]::Show("Autres outils : Cette section peut être utilisée pour afficher d'autres outils.", "Autres outils")
+    })
+###########################################################################
+
     # BUTTON 1 --> HELLO-MY-DIR
     $button1_hellomydir = New-Object System.Windows.Forms.Button
     $button1_hellomydir.Location = New-Object System.Drawing.Point(50,50)
