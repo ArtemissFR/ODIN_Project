@@ -174,10 +174,36 @@ function Create-FormLaunch {
     $form.MaximizeBox = $false
     $form.MinimizeBox = $false
 
-    $label = New-Object System.Windows.Forms.Label
-    $label.Text = "[ODIN] - Launcher"
-#    $label.Location = New-Object System.Drawing.Point(10,10)
-    $form.Controls.Add($label)
+###########################################################################
+    # Créer la barre de navigation (MenuStrip)
+    $menuStrip = New-Object System.Windows.Forms.MenuStrip
+    
+    # Créer les éléments du menu
+    $menuItemAbout = New-Object System.Windows.Forms.ToolStripMenuItem
+    $menuItemAbout.Text = "About"
+    
+    $menuItemTools = New-Object System.Windows.Forms.ToolStripMenuItem
+    $menuItemTools.Text = "Other Tools"
+    
+    # Ajouter les éléments du menu à la barre de navigation
+    $menuStrip.Items.Add($menuItemAbout)
+    $menuStrip.Items.Add($menuItemTools)
+    
+    # Ajouter la barre de navigation au formulaire
+    $form.Controls.Add($menuStrip)
+    
+    # Définir les événements des boutons
+    $menuItemAbout.Add_Click({
+        $message = "ODIN Project : Version 1.5" + [System.Environment]::NewLine + "Project by Louis Provost"
+        [System.Windows.Forms.MessageBox]::Show($message, "About")
+    })
+        
+    $menuItemTools.Add_Click({
+        $htmlFilePath = "Documentation\Tools\index.html"  # Remplace par le chemin de ton fichier HTML
+        [System.Diagnostics.Process]::Start("explorer.exe", $htmlFilePath)
+    })
+###########################################################################
+
 
     # BUTTON 1 --> HELLO-MY-DIR
     $button1_exe_hellomydir = New-Object System.Windows.Forms.Button
