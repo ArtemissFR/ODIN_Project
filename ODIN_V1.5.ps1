@@ -5,6 +5,7 @@ Add-Type -AssemblyName System.Drawing
 
 $scriptHelloMyDir = "Hello-My-Dir\Hello_My_Dir.ps1" # --> Hello-My-Dir
 $scriptHelloMyDirConfig = "Hello-My-Dir\Hello_My_Dir_Config.ps1" # --> Hello-My-Dir Configuration
+$scriptHelloMyDirStart = "C:\ODIN\Hello-My-Dir\Hello-My-Dir-main\Invoke-HelloMyDIR.ps1" # --> Hello-My-Dir Launch
 
 $scriptHardenAD = "Harden-AD\Harden-AD.ps1" # --> HardenAD
 $scriptHardenADStart = "Harden-AD\Harden-AD_start.ps1" # --> HardenAD
@@ -211,6 +212,8 @@ function Create-FormLaunch {
     $button1_exe_hellomydir.Size = New-Object System.Drawing.Size(200,30)
     $button1_exe_hellomydir.Text = "Execute Hello-My-Dir"
     $button1_exe_hellomydir.Add_Click({
+        Unblock-File -Path $scriptHelloMyDirStart # --> Hello-My-Dir Launch
+        Start-Process powershell -ArgumentList "-File C:\ODIN\Hello-My-Dir\Hello-My-Dir-main\Invoke-HelloMyDIR.ps1"
     })
     # BUTTON 1 --> HELLO-MY-DIR
     
