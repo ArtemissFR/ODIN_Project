@@ -47,18 +47,13 @@ function Create-FormInstall {
     $form.MaximizeBox = $false
     $form.MinimizeBox = $false
 
- #    $label = New-Object System.Windows.Forms.Label
- #    $label.Text = "[ODIN] - Installer"
- # #   $label.Location = New-Object System.Drawing.Point(10,10)
- #    $form.Controls.Add($label)
-
 ###########################################################################
     # Créer la barre de navigation (MenuStrip)
     $menuStrip = New-Object System.Windows.Forms.MenuStrip
     
     # Créer les éléments du menu
     $menuItemAbout = New-Object System.Windows.Forms.ToolStripMenuItem
-    $menuItemAbout.Text = "À propos"
+    $menuItemAbout.Text = "A propos"
     
     $menuItemTools = New-Object System.Windows.Forms.ToolStripMenuItem
     $menuItemTools.Text = "Autres outils"
@@ -72,11 +67,11 @@ function Create-FormInstall {
     
     # Définir les événements des boutons
     $menuItemAbout.Add_Click({
-        [System.Windows.Forms.MessageBox]::Show("À propos : Ceci est un exemple de formulaire PowerShell avec une barre de navigation.", "À propos")
+        [System.Windows.Forms.MessageBox]::Show("ODIN Project : Version 1.5", "A propos")
     })
     
     $menuItemTools.Add_Click({
-        [System.Windows.Forms.MessageBox]::Show("Autres outils : Cette section peut être utilisée pour afficher d'autres outils.", "Autres outils")
+        [System.Windows.Forms.MessageBox]::Show("Soon ...", "Autres outils")
     })
 ###########################################################################
 
