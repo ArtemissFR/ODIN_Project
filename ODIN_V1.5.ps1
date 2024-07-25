@@ -47,10 +47,10 @@ function Create-FormInstall {
     $form.MaximizeBox = $false
     $form.MinimizeBox = $false
 
-    $label = New-Object System.Windows.Forms.Label
-    $label.Text = "[ODIN] - Installer"
- #   $label.Location = New-Object System.Drawing.Point(10,10)
-    $form.Controls.Add($label)
+ #    $label = New-Object System.Windows.Forms.Label
+ #    $label.Text = "[ODIN] - Installer"
+ # #   $label.Location = New-Object System.Drawing.Point(10,10)
+ #    $form.Controls.Add($label)
 
 ###########################################################################
     # Créer la barre de navigation (MenuStrip)
